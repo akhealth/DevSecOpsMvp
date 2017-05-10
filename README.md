@@ -60,12 +60,23 @@ We plan to highlight a couple options for cloud-based staging environments.
 
 ### Cloud.gov
 [Cloud.gov](https://cloud.gov) is Platform as a Service(PaaS) running on AWS and operated by 18F.  It can run .NET Core appliations.
+Unfortunately cloud.gov only services federal customers right now. We use it as a free stand-in for other PaaS choices.
 
 First, [Get a cloud.gov](https://cloud.gov/docs/getting-started/accounts/) account and [Set up the CLI](https://cloud.gov/docs/getting-started/setup/)
 
 ```
+# Set up
 cf login -a api.fr.cloud.gov --sso
-cf target  # Ensure "sandbox"
+cf target -o sandbox-gsa -s clinton.troxel
+
+# Deploy
 cd  aspnetapp
 cf push aspnet-clint
+
+# Get more information
+cf apps
+cf logs aspnet-clint --recent
+open https://aspnet-clint.app.cloud.gov
 ```
+
+Note: with default setup, we need to comment out `//.UseUrls("http://*:5000/")` in order for this app to run under cloud.gov.  This setting was added to support Docker.
