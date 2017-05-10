@@ -53,3 +53,19 @@ After investigation, [Azure DevTestLabs](https://azure.microsoft.com/en-us/servi
 
 A rough estimate puts cost of this service at **$50/developer/month**.
 Leaving DTL notes here. We are not using DTL right now -- it doesn't give us better virtualization and they cost money.
+
+## Staging environments
+
+We plan to highlight a couple options for cloud-based staging environments.
+
+### Cloud.gov
+[Cloud.gov](https://cloud.gov) is Platform as a Service(PaaS) running on AWS and operated by 18F.  It can run .NET Core appliations.
+
+First, [Get a cloud.gov](https://cloud.gov/docs/getting-started/accounts/) account and [Set up the CLI](https://cloud.gov/docs/getting-started/setup/)
+
+```
+cf login -a api.fr.cloud.gov --sso
+cf target  # Ensure "sandbox"
+cd  aspnetapp
+cf push aspnet-clint
+```
