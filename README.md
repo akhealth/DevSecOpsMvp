@@ -53,3 +53,11 @@ After investigation, [Azure DevTestLabs](https://azure.microsoft.com/en-us/servi
 
 A rough estimate puts cost of this service at **$50/developer/month**.
 Leaving DTL notes here. We are not using DTL right now -- it doesn't give us better virtualization and they cost money.
+
+## Azure
+
+We demonstrate the sample app running on a VM in Microsoft Azure.
+
+### Permissions needed in order to create infrastructure
+
+**Simon, you can put your notes about azure permissions here**
