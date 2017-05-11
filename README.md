@@ -85,6 +85,9 @@ Note: with default setup, we need to comment out `//.UseUrls("http://*:5000/")` 
 
 We demonstrate the sample app running on a VM in Microsoft Azure.
 
+#### Terraform
+We include an example of using [Terraform](https://terraform.io) to build cloud infrastructure.
+
 ### Permissions needed in order to create infrastructure
 
 Adding resources to Azure requires "Contributor" permissions.  This can be granted in two ways:
