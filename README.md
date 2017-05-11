@@ -2,6 +2,8 @@
 This repository tracks assets of the minimum viable product for a DevOps continuous integration, continuous deployment pipeline for the [Alaska DHSS modernization project](https://github.com/18F/acq-alaska-dhss-modernization).  This project aims to transform the way Alaska approaches implementation and support activities for its mission critical technology products.  We plan to do this by taking deeper ownership of the product definition and the foundational processes and tools used in exchange for steeply reduced financial and functional risks of traditional, monolithic approaches.  The foundation of this will be a State managed DevOps pipeline.
 
 ##Why DevOps?
+
+##Definition of DevOps
 (borrowed liberally from concepts in Ben Day's _DevOps Skills for Developers with Visual Studio & TFS 2015_ Pluralsight.com class)
 - Software development vs. software delivery - delivered software is what we want
 - Big teams to get software delivered
@@ -27,7 +29,7 @@ This repository tracks assets of the minimum viable product for a DevOps continu
     * "Continuous Deployment"
 
 
-##Definition of DevOps
+##Outcomes from DevOps
 We believe that DevOps capabilities must support and include:
 1.  Rapid onboarding of vendors and other project contributors via pre-packaged development environment
 2.  Consistent, prescribed development and continuous integration processes
