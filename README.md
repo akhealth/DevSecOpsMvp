@@ -58,6 +58,9 @@ Leaving DTL notes here. We are not using DTL right now -- it doesn't give us bet
 
 We demonstrate the sample app running on a VM in Microsoft Azure.
 
+### Powershell
+We can use powershell modules to manage Azure VMs.  See more in [`powershell/README.md`](./powershell/README.md)
+
 ### Permissions needed in order to create infrastructure
 
 Adding resources to Azure requires "Contributor" permissions.  This can be granted in two ways:
