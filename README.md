@@ -1,29 +1,39 @@
-# Introduction 
-This repository tracks assets of the minimum viable product for a DevOps continuous integration, continuous deployment pipeline for the [Alaska DHSS modernization project](https://github.com/18F/acq-alaska-dhss-modernization).  This project aims to transform the way Alaska approaches implementation and support activities for its mission critical technology products.  We plan to do this by taking deeper ownership of the product definition and the foundational processes and tools used in exchange for steeply reduced financial and functional risks of traditional, monolithic approaches.
+#Introduction 
+This repository tracks assets of the minimum viable product for a DevOps continuous integration, continuous deployment pipeline for the [Alaska DHSS modernization project](https://github.com/18F/acq-alaska-dhss-modernization).  This project aims to transform the way Alaska approaches implementation and support activities for its mission critical technology products.  We plan to do this by taking deeper ownership of the product definition and the foundational processes and tools used in exchange for steeply reduced financial and functional risks of traditional, monolithic approaches.  The foundation of this will be a State managed DevOps pipeline.
 
-## Definition of DevOps
+##Definition of DevOps
 We believe that DevOps capabilities must support and include:
 1.  Rapid onboarding of vendors and other project contributors via pre-packaged development environment
 2.  Consistent, prescribed development and continuous integration processes
 3.  Measured, minimum standard code quality via automated and enforced unit test and code coverage standards
 4.  Rapid feedback via automated, continuous delivery processes
-5.  Modern change capabilities that meet the demands of the ever changing business and technology landscape 
+5.  Strongly controlled, easily managed and auditable change via automated, common deployment processes across all environments
+6.  Complete change management 
+7.  Modern change capabilities that meet the demands of the ever changing business and technology landscape 
 
-### Rapid onboarding
+###Rapid onboarding
 Onboarding will be support via a combination of application and/or OS image virtualization using technologies like Azure Dev/Test Labs, Docker, and possibly other virtualization.  New contributors should be able to onboard with a standard development toolset without having to install tools, etc.  Development, integration, test and production environmental differences should be minimized.
 
-### Conistent and Prescribed Development and Continuous Integration
+###Conistent and Prescribed Development and Continuous Integration
 Development and integration processes will be built on top of Visual Studio Team Services and Git.  These processes will leverage pull requests and continuous integration triggers to ensure that all code merged into the mainline is immediately built and passed or rejected.
 
-### Measured, minimum standard code quality
+###Measured, Minimum Standard Code Quality
 Continuous integration build processes will automatically execute unit tests.  Code coverage by unit tests will be measured and minimum code coverage standards will be defined as an accept/reject criterion for build success or failure.
 
-### Rapid feedback via Continuous delivery
+###Rapid Feedback via Continuous Delivery
 Successful CI builds will be automatically deployed to Azure hosted test infrastructure [TBD: I'm inclined to address automated GUI testing, but it feels a little far off right now...]
 
-### Modern change capabilities
+###Strongly Controlled Change
+All changes to any target CD environment must go through each of the DevOps processes.  Additionally, individuals should not have or need direct access to the CD environments, except by auditable exception.
+
+###Complete Change Management
+In traditional development and operations practices, development manages change by tracking the code changes that comprises the product, and operations manages change via an entirely separate set of processes.  In DevOps we bridge the development and operations change management practices.  We accomplish this by writing and version controlling code that leverages automated platform build tools to build the target non-production and production environments.  In concert with the other DevOps practices, this removes the barriers between development and operations, allowing members from both teams the same level of confidence that a product increment will function the same across all environments because the same processes are applied to promote change throughout those environments.
+
+###Modern Change Capabilities
 We expect this definition of DevOps to evolve over time as we build the initial pipeline and then learn through the first several product increment acquisitions what works and what needs to improve.  The modern business delivery and technology landscape requires technology products that can rapidly adapt to changes in both business requirements and tools that support those requirements.  The core mission behind the DevOps approach must be to enable and demonstrate success with delivery rapid, high-quality change.
 
+##DevOps Pipeline
+The "DevOps pipeline" joins the capabilities identified in the DevOps definition.  It functions to ensure that all changes are managed consistently.
 
 ## Development environments
 This is a DevOps MVP based around an example ASP.NET Core web app. The webapp was generated by `dotnet new mvc`.  Setup documented below for Windows(Local and Cloud), and Mac/OSX.
