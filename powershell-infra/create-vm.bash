@@ -8,8 +8,5 @@ az group create --location "$location" --name $group
 # az group delete --name $group
 
 az vm create --resource-group $group --name $vmname \
-    --image win2016datacenter --admin-username <changeme> --admin-password <changeme> \
+    --image win2016datacenter --admin-username $ADMINUSER --admin-password $ADMINPASS \
     --size Standard_A1_v2 --storage-sku Standard_LRS
-
-
-

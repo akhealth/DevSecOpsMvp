@@ -2,3 +2,5 @@
 aspnetapp/obj
 aspnetapp/bin
 parameters.json
+env.bash
+env.ps1

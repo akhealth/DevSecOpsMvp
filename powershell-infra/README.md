@@ -13,6 +13,12 @@ az login
 az account list
 ```
 
+Copy environment exammple and customize
+```sh
+cp .env.bash.example .env.bash
+source .env.bash
+```
+
 See `./create-vm.bash` for a script that will create a new Azure VM
 
 ## Powershell
