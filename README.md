@@ -3,6 +3,38 @@ This repository tracks assets of the minimum viable product for a DevOps continu
 
 ##Why DevOps?
 
+###For Everyone
+Software development has made great strides over the last 10 years by employing methodologies like Agile and Scrum to envision a product, break that product into a backlog of incremental product improvements, prioritize that backlog and then create the product in small chunks of effort over short sprints of development time.  This approach drastically reduces risks and it allows the product team to react quickly when a priority changes, or a good product improvement idea doesn't deliver the expected results.
+
+The problem with Agile and Scrum is that it's only half the story: how do we efficiently write software?  Agile and Scrum do really well answering that question, but when it comes to actually delivering software into production, Agile and Scrum are relatively mute.  Typically, this translates into the moment when the "development team" hands the written and tested software off to one or more operations teams, who have no exposure to what it took to make the software work in development, integration or quality assurance environments, and have completely separate process for how they build and configure servers and the platform software requried to run the product.  Whether it is differences in process or differences in team members or both, this impedance mismatch between how software is developed and how it is actually delivered to customers creates a barrier between development and production that increases risks and slows down delivery time. The purpose of DevOps is to break down this barrier.
+
+DevOps is a mindset focused on:
+- Reliability
+- Repeatability
+- Traceability
+- Minimal or no manual intervention
+
+DevOps is also a set of practices focused on automation:
+- Automated build
+- Automated test
+- Automated deploy
+- Automated monitoring
+- Automated infrastructure (container tech, etc.)
+
+Through this core story of automation, DevOps is always looking for new ways to eliminate human intervention.  Adding all of these capabilities up leads to "Continuous Deployment".
+
+###For Security and audit
+TBD write out the story about controlled change and tamper proof change promotion pipelines.
+
+###For Operations
+TBD write out the story about visibility, and quality of both software product *and* the deployment products used to rapidly and consistently deploy the software.
+
+###For Development
+TBD write out the derisking story of removing deployment technical debt and the security/confidence in knowing that change can be delivered quickly 
+
+###For the customer
+TBD write out the story of value for the customer.
+
 ##Definition of DevOps
 (borrowed liberally from concepts in Ben Day's _DevOps Skills for Developers with Visual Studio & TFS 2015_ Pluralsight.com class)
 - Software development vs. software delivery - delivered software is what we want
