@@ -31,10 +31,13 @@ TBD write out the story about controlled change and tamper proof change promotio
 DevOps focuses on visibility and repeatability, and it does so with quality of both the software product *and* the deployment products used to rapidly and consistently deploy the software.  Additionally, the emphasis on automating infrastructure affords the operations team to bring their own requirements to the table and realize those requirements through version controlled code and configuration artifacts.  Building servers and configuring infrastructure this way reduces or eliminates configuration drift and yields consistent and documented families of infrastructure resources.
 
 ###For Development
-TBD write out the derisking story of removing deployment technical debt and the security/confidence in knowing that change can be delivered quickly 
+DevOps extends the proven practices of Agile and Scrum by removing deployment technical debt and de-risking the ultimate goal: delivering the product.  DevOps provides developers with the security/confidence of knowing that change can be delivered quickly, and there are no mystery variables that span the non-production and production environments. 
+
+###For the Team
+DevOps brings down the wall between development and operations, and puts everyone on the same team, providing equal visibility into changes aimed at both the customer products and the operating environment of those products.  Additionally, through automation, tight change control and limited need for direct access to production environments, DevOps realizes the solution to limited resources in IT organization that cannot support full separation of duties.
 
 ###For the customer
-TBD write out the story of value for the customer.
+For the customer, DevOps yields a better product that is delivered faster than with traditional processes that separate development from oprations.
 
 ##Outcomes from DevOps
 We believe that DevOps capabilities must support and include:
