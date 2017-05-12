@@ -1,3 +1,4 @@
 .DS_Store
 aspnetapp/obj
 aspnetapp/bin
+parameters.json

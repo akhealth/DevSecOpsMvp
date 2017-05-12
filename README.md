@@ -58,8 +58,14 @@ Leaving DTL notes here. We are not using DTL right now -- it doesn't give us bet
 
 We demonstrate the sample app running on a VM in Microsoft Azure.
 
-### Powershell
-We can use powershell modules to manage Azure VMs.  See more in [`powershell/README.md`](./powershell/README.md)
+### Powershell, CLI infrastructure
+We can use powershell modules or the Azure CLI to manage Azure VMs.  See more in [`powershell_infra/README.md`](./powershell_infra/README.md)
+
+### Raw ARM infrastructure
+With Powershell and CLI we can only run the script.  If a VM exists our script will error.  It does not handle existing infra.
+To handle existing infrastructure -- deleting things that aren't supposed to be there, creating things that are missing -- we need to use something like Terraform or raw ARM with mode=complete.
+
+Learn more in [`raw-arm-infra/README.md`](./raw-arm-infra/README.md)
 
 ### Permissions needed in order to create infrastructure
 
