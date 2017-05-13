@@ -140,3 +140,66 @@ TBD - VSTS build deployment
 
 ##Non-production and Production Infrastructure
 TBD - Azure
+
+## Staging environments
+
+We plan to highlight a couple options for cloud-based staging environments.
+
+### Cloud.gov
+[Cloud.gov](https://cloud.gov) is Platform as a Service(PaaS) running on AWS and operated by 18F.  It can run .NET Core appliations.
+Unfortunately cloud.gov only services federal customers right now. We use it as a free stand-in for other PaaS choices.
+
+First, [Get a cloud.gov](https://cloud.gov/docs/getting-started/accounts/) account and [Set up the CLI](https://cloud.gov/docs/getting-started/setup/)
+
+```
+# Set up
+cf login -a api.fr.cloud.gov --sso
+cf target -o sandbox-gsa -s clinton.troxel
+
+# Deploy
+cd  aspnetapp
+cf push aspnet-clint
+
+# Get more information
+cf apps
+cf logs aspnet-clint --recent
+open https://aspnet-clint.app.cloud.gov
+```
+
+Note: with default setup, we need to comment out `//.UseUrls("http://*:5000/")` in order for this app to run under cloud.gov.  This setting was added to support Docker.
+
+## Azure
+
+We demonstrate the sample app running on a VM in Microsoft Azure.
+
+### Powershell, CLI infrastructure
+We can use powershell modules or the Azure CLI to manage Azure VMs.  See more in [`powershell_infra/README.md`](./powershell_infra/README.md)
+
+### Raw ARM infrastructure
+With Powershell and CLI we can only run the script.  If a VM exists our script will error.  It does not handle existing infra.
+To handle existing infrastructure -- deleting things that aren't supposed to be there, creating things that are missing -- we need to use something like Terraform or raw ARM with mode=complete.
+
+Learn more in [`raw-arm-infra/README.md`](./raw-arm-infra/README.md)
+
+#### Terraform
+We include an example of using [Terraform](https://terraform.io) to build cloud infrastructure.
+
+### Permissions needed in order to create infrastructure
+
+Adding resources to Azure requires "Contributor" permissions.  This can be granted in two ways:
+- At the Azure subscription level
+- At the Azure resource group level 
+
+####Add an Azure subcription contributor
+1.  Select _More services >_ from the bottom of the Azure Portal services menu (the services list panel opens)
+2.  Search for "Subscriptions" and click the Subscriptions tile (the Subscriptions list panel opens)
+3.  Click on the subscription you want to add a new contributor to (the management panel for that subscription opens)
+4.  Click on _Access control (IAM)_ (the access management panel opens)
+5.  Click on the _Roles_ toolbar button (the roles panel opens)
+6.  Click on the _Contributor_ role (the contributor group membership panel opens)
+7.  Add the user to the group and close the panels
+
+####Add an Azure resource group contributor
+1.  Select _Resource groups_ from the Azure Portal services menu
+2.  Click on the resource group you want to add a new contributor to (the management panel for that resource group opens)
+3.  _Continue as from step 4 of the procedure for adding an Azure subscription contributor_
