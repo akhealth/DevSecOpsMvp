@@ -6,6 +6,7 @@ This repository tracks assets of the minimum viable product for a DevOps continu
 
 ## Development
 [`Development.md`](./Development.md) has info about development environments like windows local and Docker.
+[`Tests.md`](./Tests.md) has info about running included unit and integration tests.
 
 ## Infrastructure
 [`Azure.md`](./Azure.md) has info about managing Azure.
