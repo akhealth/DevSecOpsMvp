@@ -7,7 +7,7 @@ namespace AspNetAppTests.Controllers.Unit
 {
 
     [TestClass]
-    public class HomeControllerTests
+    public class HomeControllerUnit
     {
 
         [TestMethod]
