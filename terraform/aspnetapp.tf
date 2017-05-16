@@ -39,6 +39,7 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
+# I _think_ I might have seen a TF deploy error because the VM appeared before storage. If that happens again we should add an explicit dependency between these resources
 resource "azurerm_storage_account" "storage" {
   # name must be unique _across azure_
   name                = "akstagingstorage01"
@@ -89,5 +90,4 @@ resource "azurerm_virtual_machine" "vm" {
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
   }
-
 }

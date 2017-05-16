@@ -34,7 +34,7 @@ variable "storage_account_type" {
 }
 
 variable "vm_size" {
-  default = "Standard_A0"
+  default = "Standard_A2_v2"
 }
 
 variable "hostname" {
