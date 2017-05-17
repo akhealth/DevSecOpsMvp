@@ -45,9 +45,9 @@ PowerShell
 $ArmVars = (Get-Content "ps-arm-vars.json") -join "`n" | ConvertFrom-Json
 
 # login to Azure
-$PWord = ConvertTo-SecureString -String $ArmVars.LoginInfo.Password -AsPlainText -Force #Get-Credential -UserName $ApplicationId -Message "Enter Password"
+$PWord = ConvertTo-SecureString -String $ArmVars.LoginInfo.Password -AsPlainText -Force
 $PSCredential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $ArmVars.LoginInfo.ApplicationId, $PWord
-Login-AzureRmAccount -Credential $PSCredential -ServicePrincipal -TenantId $TenantId
+Login-AzureRmAccount -Credential $PSCredential -ServicePrincipal -TenantId $ArmVars.LoginInfo.TenantId
 
 # select the specific subscription to work with
 # note: might be redundant when logging in with service principal

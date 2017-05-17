@@ -5,7 +5,7 @@
                            "TemplateParameterFile":  "parameters.json"
                        },
     "ResourceGroupInfo":  {
-                              "Name":  "UPDATEME",
+                              "Name":  "test-change",
                               "Location":  "UPDATEME"
                           },
     "SubscriptionInfo":  {
