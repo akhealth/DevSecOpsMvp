@@ -3,7 +3,7 @@
 configuration WebServer {
   Node "localhost"
   {
-    # This example creates a folder
+    # This example creates a folder as an example
     File FileDemo {
       Type = 'Directory'
       DestinationPath = 'C:\AKWASHERE'
@@ -16,6 +16,12 @@ configuration WebServer {
 			Ensure = "Present"
 			Name = "Web-Server"
 		}
+
+    WindowsFeature InstallDotNetFramework
+    {
+      Name = 'NET-Framework-Core'
+      Ensure = 'Present'
+    }
   }
 }
 
