@@ -49,10 +49,6 @@ $PWord = ConvertTo-SecureString -String $ArmVars.LoginInfo.Password -AsPlainText
 $PSCredential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $ArmVars.LoginInfo.ApplicationId, $PWord
 Login-AzureRmAccount -Credential $PSCredential -ServicePrincipal -TenantId $ArmVars.LoginInfo.TenantId
 
-# select the specific subscription to work with
-# note: might be redundant when logging in with service principal
-Select-AzureRmSubscription -SubscriptionName $ArmVars.SubscriptionInfo.Name
-
 # create an Azure resource group
 New-AzureRmResourceGroup -Name $ArmVars.ResourceGroupInfo.Name -Location $ArmVars.ResourceGroupInfo.Location
 
