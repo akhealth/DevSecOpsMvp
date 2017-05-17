@@ -31,6 +31,8 @@ You will need these outputs from the command, they go into your environment file
 
 ## Use
 
+[Available Terraform/Azure Resources](https://www.terraform.io/docs/providers/azurerm)
+
 ### Setup
 Copy the environment file: `cp terraform.tfvars.example terraform.tfvars`.
 Use the authentication variables from above to customize `terraform.tfvars`.

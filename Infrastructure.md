@@ -41,5 +41,8 @@ Learn more in [`raw-arm-infra/README.md`](./raw-arm-infra/README.md)
 ### Terraform
 We include an example of using [Terraform](https://terraform.io) to build cloud infrastructure.
 
-
+### Azure App Service
+Azure App Service is more like a Platform-as-a-Service for .NET Apps.
+The VSTS Build pipeline also easily deploys to this service.
+There is also a **Free** plan limited to 60min/day.
 
