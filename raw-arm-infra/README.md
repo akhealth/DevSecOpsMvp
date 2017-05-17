@@ -35,3 +35,27 @@ az group deployment create --name $group --resource-group $group --template-file
 
 # az group delete --name $group
 ```
+
+PowerShell
+```ps1
+# assume: service principle is already created (see link below code block)
+# set the process environment current directory to the current location in PS
+[Environment]::CurrentDirectory = Get-Location -PSProvider FileSystem
+
+$ArmVars = (Get-Content "ps-arm-vars.json") -join "`n" | ConvertFrom-Json
+
+# login to Azure
+$PWord = ConvertTo-SecureString -String $ArmVars.LoginInfo.Password -AsPlainText -Force
+$PSCredential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $ArmVars.LoginInfo.ApplicationId, $PWord
+Login-AzureRmAccount -Credential $PSCredential -ServicePrincipal -TenantId $ArmVars.LoginInfo.TenantId
+
+# create an Azure resource group
+New-AzureRmResourceGroup -Name $ArmVars.ResourceGroupInfo.Name -Location $ArmVars.ResourceGroupInfo.Location
+
+# Create a deployment based on a template and a parameter file
+New-AzureRmResourceGroupDeployment -Name $ArmVars.DeploymentInfo.Name -ResourceGroupName $ArmVars.ResourceGroupInfo.Name -TemplateFile $ArmVars.DeploymentInfo.TemplateFile -TemplateParameterFile $ArmVars.DeploymentInfo.TemplateParameterFile
+
+# to cleanup/teardown the resource group (and deployment):
+# Remove-AzureRmResourceGroup -Name $ArmVars.ResourceGroupInfo.Name -Force
+```
+For docs on creating an Azure service principle, see [Create a Service Principle](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azurermps-3.8.0)

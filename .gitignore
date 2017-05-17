@@ -2,5 +2,6 @@
 aspnetapp/obj
 aspnetapp/bin
 parameters.json
+raw-arm-infra/ps-arm-vars.json
 env.bash
 env.ps1
