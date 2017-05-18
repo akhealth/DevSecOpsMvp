@@ -5,7 +5,6 @@
 Download and install [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html).
 Or `brew install terraform` on OSX.  Or `choco install terraform` on WIN.
 
-
 ## Azure access with Service Principal
 The `azurerm` TF provider takes some inputs for authentication.  [Full Instructions](https://www.terraform.io/docs/providers/azurerm/#to-create-using-azure-cli-)
 
@@ -15,6 +14,7 @@ Download and install the CLI here: [https://github.com/Azure/azure-cli](https://
 
 ```sh
 az login
+
 # Get your subscription_id (just labeled "id" in the output of this command)
 az account show
 
@@ -30,6 +30,8 @@ You will need these outputs from the command, they go into your environment file
 - "tenant" = "tenant_id"
 
 ## Use
+
+[Available Terraform/Azure Resources](https://www.terraform.io/docs/providers/azurerm)
 
 ### Setup
 Copy the environment file: `cp terraform.tfvars.example terraform.tfvars`.

@@ -90,4 +90,23 @@ resource "azurerm_virtual_machine" "vm" {
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
   }
+
+# https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_extension.html#settings
+# This VM extension will register the VM with our AzureAutomation server.
+#
+#   resource "azurerm_virtual_machine_extension" "test" {
+#   name                 = "${var.hostname}/Microsoft.Powershell.DSC"
+#   location             = "${var.location}"
+#   resource_group_name  = "${azurerm_resource_group.rg.name}"
+#   virtual_machine_name = "${var.hostname}"
+#   publisher            = "Microsoft.Powershell"
+#   type                 = "DSC"
+#   type_handler_version = "2.22"
+
+#   settings = <<SETTINGS
+#     {
+#         "commandToExecute": "hostname"
+#     }
+# SETTINGS
+#   }
 }
