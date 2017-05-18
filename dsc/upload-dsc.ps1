@@ -21,3 +21,5 @@ Login-AzureRmAccount -Credential $creds -ServicePrincipal -TenantId $tenant
 
 # Show Context, prove we're connected from the pipeline
 Get-AzureRMContext
+
+# TODO: Actually upload the DSC to AA now that we're connected to Azure
