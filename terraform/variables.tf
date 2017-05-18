@@ -5,7 +5,7 @@ variable "client_secret" {}
 variable "tenant_id" {}
 
 variable "resource_group" {
-    default = "staging"
+    default = "terraform-staging"
 }
 
 variable "location" {
