@@ -14,6 +14,8 @@ Get ServicePrincipal account details from your administrator.
 For now I'm going to use the Terraform SP, see `../terraform/README.md` for more info
 
 ### Getting DSC to Azure Automation
-We upload DSC from the master branch into Azure Automation using Powershell scripts checked in here.
-The build definition will require setting the following variables:
-`azuresp-user, azuresp-tenantid, azuresp-pass`, which are associated with the SP user mentioned above.
+We upload DSC from the master branch into Azure Automation using `upload-dsc.ps1`
+The build definition will require the following secret variables: `AzureSpUser`, `AzureSpPass`, `AzureSpTenant`.
+After setting these as "Variables" in the VSTS build, add the following to the "Arguments" input of your Powershell task: `-user "$(AzureSpUser)" -pass "$(AzureSpPass)" -tenant "$(AzureSpTenant)"`
+
+Doing so will provide those secret values to our Powershell build tasks. `upload-dsc.ps1` is a good example of a VSTS/build Powershell/task that accesses Azure using encrytped auth values.

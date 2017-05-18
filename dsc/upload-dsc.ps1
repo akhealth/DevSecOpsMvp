@@ -1,41 +1,23 @@
 # This script is run as a step in our build pipeline.
 #  It authenticates with Azure and uploads our configurations to AzureAutomation.
-#  The $env variables below must be set in the build pipeline
 
-# Try to figure out how to access VSTS ENV Variables
+# Pass these _hidden/encrypted_ parameters in from the build step
+#  the "Arguments" look like `-user "$(AzureSpUser)" -pass "$(AzureSpPass)" -tenant "$(AzureSpTenant)"`
 Param(
   [string]$user,
   [string]$pass,
   [string]$tenant
 )
 
-Write-Host "()()())()()()()()()()()()()()()()"
-Write-Host $user
-Write-Host $pass
-Write-Host $tenant
-Write-Host "()()())()()()()()()()()()()()()()"
+# Hidden VSTS variables are redacted from logs
+Write-Host "Here is the secret user value: $user"
 
-
-Write-Host "User*** $env:AzureSpUser ***"
-Write-Host "Pass*** $env:AzureSpPass ***"
-Write-Host "Ten*** $env:AzureSpTenant ***"
-
-#Get-AzureRMContext
-
-#Get-VstsTaskVariable
-
-###############
-###############
-
+# Generate creds from secrets
 $secpasswd = ConvertTo-SecureString $pass -AsPlainText -Force
-
 $creds = New-Object System.Management.Automation.PSCredential ($user, $secpasswd)
 
-Write-Host "***********************"
-Write-Host $creds.UserName
-Write-Host $creds.Password
-Write-Host "***********************"
-
-#Get-AzureRMContext
+# Login to Azure using the SP credentials
 Login-AzureRmAccount -Credential $creds -ServicePrincipal -TenantId $tenant
+
+# Show Context, prove we're connected from the pipeline
 Get-AzureRMContext
