@@ -2,7 +2,7 @@ $Location = "West US 2"
 $Group = "dotnettest"
 
 New-AzureRmResourceGroup -Name $Group -Location $Location
-#Remove-AzureRMResourceGroup -name $Group 
+#Remove-AzureRMResourceGroup -name $Group
 
 # Create a network
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name subnet1 -AddressPrefix 10.0.1.0/24
