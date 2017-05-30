@@ -2,7 +2,7 @@ location="West US 2"
 group="dotnettest"
 vmname="testVM"
 
-az group create --location "$location" --name $group 
+az group create --location "$location" --name $group
 
 # Destroy the resource group to quickly delete all contained resources
 # az group delete --name $group

@@ -1,10 +1,34 @@
 # Cloud Infrastructure 
+We highlight a couple options for cloud-based staging environments.
 
-We plan to highlight a couple options for cloud-based staging environments.
+## Infrastructure as a Service
+
+### Azure: Powershell, CLI infrastructure
+We can use powershell modules or the Azure CLI to manage Azure VMs.  See more in [`powershell-cli-infra/README.md`](./powershell-cli-infra/README.md)
+
+### Azure: Raw ARM infrastructure
+With Powershell and CLI we can only run the script.  If we run this script twice it will error.  It does not handle existing infra.
+For deleting things that aren't supposed to be there, creating things that are missing, updating things that are changed -- we need to use something like Terraform or raw ARM with mode=complete.
+
+Learn more in [`raw-arm-infra/README.md`](./raw-arm-infra/README.md)
+
+### Azure: Terraform
+We include an example of using [Terraform](https://terraform.io) to build cloud infrastructure.
+
+Learn more in [`terraform/README.md`](./terraform/README.md)
+
+## Platform as a Service
+
+### Azure App Service
+Azure App Service is more like a Platform-as-a-Service for .NET Apps.
+The VSTS Build pipeline also easily deploys to this service.
+There is also a **Free** plan limited to 60min/day of non-resting time.
+
+Learn more in [`appservice/README.md`](./appservice/README.md)
 
 ## Cloud.gov
 [Cloud.gov](https://cloud.gov) is Platform as a Service(PaaS) running on AWS and operated by 18F.  It can run .NET Core appliations.
-Unfortunately cloud.gov only services federal customers right now. We use it as a free stand-in for other PaaS choices.
+Unfortunately cloud.gov only services federal customers right now. It stands as a proxy for things like [Heroku](https://heroku.com) and [CloudFoundryff](https://www.cloudfoundry.org/platform/).
 
 First, [Get a cloud.gov](https://cloud.gov/docs/getting-started/accounts/) account and [Set up the CLI](https://cloud.gov/docs/getting-started/setup/)
 
@@ -23,26 +47,5 @@ cf logs aspnet-clint --recent
 open https://aspnet-clint.app.cloud.gov
 ```
 
-Note: with default setup, we need to comment out `//.UseUrls("http://*:5000/")` in order for this app to run under cloud.gov.  This setting was added to support Docker.
-
-## Azure
-
-We demonstrate the sample app running on a VM in Microsoft Azure.
-
-### Powershell, CLI infrastructure
-We can use powershell modules or the Azure CLI to manage Azure VMs.  See more in [`powershell_infra/README.md`](./powershell_infra/README.md)
-
-### Raw ARM infrastructure
-With Powershell and CLI we can only run the script.  If a VM exists our script will error.  It does not handle existing infra.
-To handle existing infrastructure -- deleting things that aren't supposed to be there, creating things that are missing -- we need to use something like Terraform or raw ARM with mode=complete.
-
-Learn more in [`raw-arm-infra/README.md`](./raw-arm-infra/README.md)
-
-### Terraform
-We include an example of using [Terraform](https://terraform.io) to build cloud infrastructure.
-
-### Azure App Service
-Azure App Service is more like a Platform-as-a-Service for .NET Apps.
-The VSTS Build pipeline also easily deploys to this service.
-There is also a **Free** plan limited to 60min/day.
+Note: with this simple setup, we need to comment out `//.UseUrls("http://*:5000/")` in `aspnetapp/Program.cs` in order for this app to run under cloud.gov.  This setting was added to support Docker.
 
