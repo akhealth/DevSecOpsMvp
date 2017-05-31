@@ -1,7 +1,7 @@
 # Veracode Visual Studio Team Services Integration
 See [Instructions for the VSTS Veracode plugin](https://marketplace.visualstudio.com/items?itemName=Veracode.veracode-vsts-build-extension&targetId=3a6fdb87-28e4-40c1-95d9-87028e93af8f) for information used to create the following procedure.  You will need to do the following to integrate VSTS and Veracode:
 
-## Veracode configuration
+## Veracode portal configuration
 1. Obtain a valid Veracode login with access to the State of Alaska portal and the ARIES-WP application
 2. Login to [Veracode portal](https://analysiscenter.veracode.com)
 3. Hover over the "State of Alaska" dropdown link - a menu drops down
@@ -13,12 +13,12 @@ See [Instructions for the VSTS Veracode plugin](https://marketplace.visualstudio
 VSTS Veracode plugin configuration
 1. Add the "Upload and scan" Veracode plugin task to the VSTS build definition
 2. In the Upload and scan Veracode VSTS build plugin task, select the _Endpoint_ connection source from the _Select Connection Source_ radio button options
-3. Click the _+_ symbol to the right of the _Select Endpoint_ field
+3. If there is a Veracode endpoint defined in the _Select Endpoint_ droplist select it and skip to step (9), otherwise click the _+_ symbol to the right of the _Select Endpoint_ field
 4. Choose the _Veracode Endpoint_ radio button
 5. Name the endpoint
 6. Paste the Veracode API ID obtained in step 4 of Veracode configuration into the _ID_ field
 7. Paste the Veracode API Secret Key obtained in step 4 of Veracode configuration into the _key_ field
-8. Click _OK_
+8. Click _OK_ and make sure the Veracode endpoint is selected in the _Select Endpoint_ droplist
 9. Create a build definition variable called Veracode.AppName, e.g., "ARIES-WP" as the value (note: this ties the code scan to the licensed app in Veracode, in these instructions the example "ARIES-WP" ties to the Aries worker portal license.  Work with the DHSS Veracode adminstrator if setting up for scan of something besides the ARIES worker portal.)
 10. In the Upload and scan Veracode VSTS build plugin task, enter _$(Veracode.AppName)_ into the _Application Name_ field
 11. Expand _Advanced Scan Settings_ and enter the name of the Veracode Sandbox
