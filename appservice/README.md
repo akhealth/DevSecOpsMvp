@@ -24,11 +24,22 @@ See `create-app-service.bash` to create the AppService, and for an example of de
 
 ## Some other cool tricks
 ```bash
-az appservice web stop --name $service_name --resource-group $group_name
-az appservice web start
-az appservice web restart
-az appservice web log tail
+az webapp stop --name $service_name --resource-group $group_name
+az webapp start
+az webapp restart
+az webapp log tail --name $service_name --resource-group $group_name
 ```
+
+Note: It can take a while (5 min?) for log streams to start appearing.  Sometimes it happens very fast.
+
+## Debugging
+
+There are a couple ways to debug 500 errors in AppService.
+
+0. The best and easiest way to get full errors is to set an environment variable `ASPNETCORE_ENVIRONMENT` to `Development`.  This can be done in the portal under AppService -> Appliation Settings -> App Settings. Setting this ENV variable will make your stack traces visible to the whole world.
+1. The "Diagnostic Logs" screen has FTP endpoints where you can view all logs, etc.  This is kinda klunky.
+2. Appliation Insights is a feature that lets us instrument apps, including 500 errors. This takes extra setup that we haven't done.
+3. We can include a `web.config` with `CustomErrors-off` in our app.  It gets merged with the AppService file. I can see correct results in the deployed file... still this seems to work for others but not me.
 
 ## Notes
 
