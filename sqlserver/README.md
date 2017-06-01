@@ -58,10 +58,31 @@ sqlcmd
 
 SSMS will work locally on the SQLServer VM, but you won't be able to connect directly from other machines using SSMS on port `1433`.  This is intentional as it more closely models the eventual AK setup.
 
+Another option is to connect from VSCode.  Install the `mssql` extension.  find "MS SQL: Connect" in your command palate.  Connect to `localhost`, where Docker is running. Switch to the SQL file and cmd-palate to "MS SQL: Connect", then "MS SQL: Execute Query".
+
+## Local SQL Server notes
+
+We need to verify that this example asp.net app can connect to my local db first.  We'll use Docker.
+
+```sh
+docker pull microsoft/mssql-server-linux
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=BaldEagle123' -p 1433:1433 -d microsoft/mssql-server-linux
+docker ps -a
+```
+
+Debug: `docker logs <container_id>`. I had to increase my Docker memory to 4G from my Mac menubar.
+
+Run `sqlcmd` from inside the container
+
+```sh
+docker exec -it <container_id> bash
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'BaldEagle123'
+```
+
 ## Seeding with data
 
 Create a new database and seed it with some data.
-Run the contents of `seed.sql` on the new SQL Server, SSMS is probably the easiest.
+Run the contents of `seed.sql` on the new SQL Server, SSMS is probably the easiest, or just paste into `sqlcmd`.
 You should be able to issue this query and see some data:
 
 ```sql
