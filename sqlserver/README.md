@@ -140,4 +140,6 @@ $sqlconn = New-Object System.Data.SqlClient.SqlConnection($connstr)
 $sqlconn.Open();
 $sqlconn.Close();
 ```
-**\*Note**: the `User ID` and `Password` below are SQL Server Auth credentails that you'll have to set up. Also, the `Server` value is the same for you AppService app as it is, locally, on the SQL Server.  This is the magic of Hybrid Connections.
+**\*Note**: the `User ID` and `Password` below are SQL Server Auth credentails that you'll have to set up. 
+
+**Further, the connection string is _identical_ for local/VM and Hybrid/PaaS connections.** This is the magic of Hybrid Connections.
