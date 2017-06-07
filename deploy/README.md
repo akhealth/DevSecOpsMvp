@@ -45,5 +45,3 @@ We can push our sample .NET Core app to this service with a Build or Release ste
 I think it [might be possible](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-integrate-with-vnet) to hook this service up to an on-prem server via VPN by putting it in an Azure Vnet that is connected to on-prem.
 
 We use two scripts here `start-azure-app.ps1`, `stop-azure-app.ps1` that start and stop the Azure App service on either sie of the built-in deploy task.  VSTS also has a Task Type that is "Azure Powershell Script" that should run PS commands in the context of our Azure, which would turn those into 1 line scripts.
-
-TODO: Automate or at least document the VSTS Build / Release setup

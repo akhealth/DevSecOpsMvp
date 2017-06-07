@@ -17,8 +17,13 @@ This repository tracks assets of the minimum viable product for a DevOps continu
 - `az` CLI
 - [Terraform](https://terraform.io)
 
-## Continuous Integration servers
-TODO: Set up and configure the VSTS Build server to build this project.  Add some tests that can pass or fail.  Write code for as much configuration as  we can.
+The `/appservice` folder contains code and docs around the Azure App Service, i.e. the Azure PaaS.
 
-## Continuous Deployment
-TODO: A build script executed by the CI Server that targets a
+The `/sqlserver` folder contains code and docs for MS SQL Server.
+
+## Example App
+See `/aspnetapp` folder for the example app that we build and deploy
+
+## CI, CD
+See `/vsts` folder for documentation around the VSTS Build and Release pipelines.
+See `/deploy` folder for docs around deploying to the Azure AppService.

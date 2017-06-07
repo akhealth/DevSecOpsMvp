@@ -1,6 +1,6 @@
 # Desired State Configuration
 
-We're using DSC to configure a VM.
+We're using DSC to configure this VM.
 
 ## Azure Automation
 DSC works best with a Pull Server like [Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-intro).
