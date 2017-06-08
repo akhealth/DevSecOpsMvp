@@ -1,8 +1,7 @@
 # Tests
 
-We run automated tests as a step in our CI build pipeline.
+We run automated tests for a project as a step in our CI build pipeline.
 Developers will also run these tests locally.
-
 
 ## Run Tests
 The Dotnet CLI provides `dotnet test`:

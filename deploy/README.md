@@ -42,6 +42,8 @@ TODO: This is only sketched out, not fully working.
 [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) is like a PaaS.
 We can push our sample .NET Core app to this service with a Build or Release step in VSTS.
 
-I think it [might be possible](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-integrate-with-vnet) to hook this service up to an on-prem server via VPN by putting it in an Azure Vnet that is connected to on-prem.
-
 We use two scripts here `start-azure-app.ps1`, `stop-azure-app.ps1` that start and stop the Azure App service on either sie of the built-in deploy task.  VSTS also has a Task Type that is "Azure Powershell Script" that should run PS commands in the context of our Azure, which would turn those into 1 line scripts.
+
+Azure Apps uses [Kudu](https://github.com/projectkudu/kudu) to handle deployments. See `appservice/README.md` to set up a local git repository to push/deploy to an AppService app.  
+
+Kudu has a very useful dashboard that lives behind Azure authentication.  To view the dashboard add `.scm` to your AppService url.  i.e. change `http://devopsmvp-staging.azurewebsites.net` to `http://devopsmvp-staging.scm.azurewebsites.net`.

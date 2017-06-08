@@ -78,7 +78,8 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=BaldEagle123' -p 1433:1433 -d micr
 docker ps -a
 ```
 
-Debug problems with: `docker logs <container_id>`. I had to increase my Docker memory to 4G from my Mac menubar.
+Debug problems with: `docker logs <container_id>`.
+**I had to increase my Docker memory to 4G from my Mac menubar.**
 
 Run `sqlcmd` from inside the container:
 

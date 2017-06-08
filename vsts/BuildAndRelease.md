@@ -7,7 +7,7 @@ In VSTS on the Builds screen you can click the "..." menu for an existing build 
 
 Another option worth investigating is the VSTS REST API.  It looks like it supports creating build definitions and other things: https://www.visualstudio.com/en-us/docs/integrate/api/build/definitions
 
-Setting up VSTS Builds from scratch isn't terribly hard, so I'll just document.
+Setting up VSTS Builds from scratch isn't terribly hard. It should take around 15 min, so I'll just document.
 
 ## General Build settings
 
@@ -16,12 +16,14 @@ These apply to all builds.
 - Options -> Default agent queue should be "Hosted VS2017".
 - Triggers -> Continuous Integration is "Enabled", at least "master" branch is selected.
 
+**Note** You can set the branch to `*`, which will build commits to all branches. It might make sense to have one build definition for "master" and one for "*". The master build may export to open source, and other small differences.
+
 ## .NET Core settings
 
 These apply to .NET Core apps
 
 - "+New" -> ASP.Net Core.  This adds Restore, Build, Test, Publish, and Publish Artifact tasks.
-- I think because I didn't follow convention, I have to change the "Test" task's "Project(s)" setting to "*\*/\*.csproj".
+- I think because I didn't follow convention in our demo project, I have to change the "Test" task's "Project(s)" setting to "*\*/\*.csproj".
 
 ## Powershell
 
@@ -38,7 +40,7 @@ Here are some best practices
 - Inputs for Params come from VSTS/Build Variables. Click the lock to encrypt and hide secret values.
 
 This repo contains a couple examples of Powershell scripts meant to be run as a build step.
-See `dsc/upload-dsc.ps1`, `opensource/push-to-github.ps1`.
+See `dsc/upload-dsc.ps1`, `opensource/push-to-github.ps1`, `deploy/start-azure-app.ps1`.
 
 
 # VSTS Release Pipeline

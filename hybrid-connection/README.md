@@ -1,6 +1,6 @@
 # Azure Hybrid Connections
 
-We use an Azure Hybrid Connection to connect to an on-prem SQL Server from within the Azure AppService.
+We use an Azure Hybrid Connection to connect to an on-prem SQL Server from within the Azure AppService PaaS.
 
 ## Enabling Hybrid Connection
 
