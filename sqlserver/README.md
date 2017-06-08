@@ -143,3 +143,18 @@ $sqlconn.Close();
 **\*Note**: the `User ID` and `Password` below are SQL Server Auth credentails that you'll have to set up. 
 
 **Further, the connection string is _identical_ for local/VM and Hybrid/PaaS connections.** This is the magic of Hybrid Connections.
+
+### Hybrid Connection underlying technology
+
+Please see the following pages for further documentation from Microsoft.
+
+ [Azure Relay Documentation](https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-what-is-it)
+> In the relayed data transfer pattern, an on-premises service connects to the relay service through an outbound port and creates a bi-directional socket for communication tied to a particular rendezvous address. The client can then communicate with the on-premises service by sending traffic to the relay service targeting the rendezvous address. The relay service then "relays" data to the on-premises service through a bi-directional socket dedicated to each client. The client does not need a direct connection to the on-premises service, it is not required to know where the service resides, and the on-premises service does not need any inbound ports open on the firewall.
+
+[Hybrid Protocol Documentation](https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol)
+> The key capability elements provided by Relay are bi-directional, unbuffered communication across network boundaries with TCP-like throttling, endpoint discovery, connectivity status, and overlaid endpoint security. The relay capabilities differ from network-level integration technologies such as VPN, in that relay can be scoped to a single application endpoint on a single machine, while VPN technology is far more intrusive as it relies on altering the network environment.
+
+[AppService Hybrid Connection Documentation](https://docs.microsoft.com/en-us/azure/app-service/app-service-hybrid-connections)
+> The connection uses TLS 1.2 for security and SAS keys for authentication/authorization.
+
+
