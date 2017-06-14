@@ -70,7 +70,9 @@ VSCode is a nice interface for local connections
 
 ## Local SQL Server notes
 
-We need to verify that this example asp.net app can connect to the local db first.  We'll use Docker.
+We need to verify that this example asp.net app can connect to a local db first.
+
+### Docker + Mac
 
 ```sh
 docker pull microsoft/mssql-server-linux
@@ -87,6 +89,17 @@ Run `sqlcmd` from inside the container:
 docker exec -it <container_id> bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'BaldEagle123'
 ```
+
+### Choco + Windows
+
+If you want a quick SQL Server **Express** on Windows you can use [chocolatey](https://chocolatey.org/)
+
+```ps1
+choco install sql-server-express -y
+```
+Use the Express UI to "Enable" "TCP/IP" under "SQL Server Network Configuration".
+In TCP/IP Properties set port to 1433
+
 
 ## Seeding with data
 
