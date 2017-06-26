@@ -45,7 +45,7 @@ $sqlconn = New-Object System.Data.SqlClient.SqlConnection($connstr)
 $sqlconn.Open();
 $sqlconn.Close();
 ```
-**\*Note**: the `User ID` and `Password` below are SQL Server Auth credentails that you'll have to set up. 
+**\*Note**: the `User ID` and `Password` just above are SQL Server Auth credentails that you'll have to set up. 
 
 **Further, the connection string is _identical_ for local/VM and Hybrid/PaaS connections.** This is the magic of Hybrid Connections.
 
