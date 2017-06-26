@@ -30,12 +30,13 @@ Imagine two PRs called A and B are open against the `staging` branch. The two PR
 
 In this case we have a couple options.
 
-1. Rebase: `git rebase B_branch staging`.  Rebasing the brach replays all of the commits from B on top of the _new_ `staging` branch (which now contains changes from A). Rebasing is the preferred method for handling these issues.  Push the `B_branch` and you'll be able to use VSTS to close the PR.
+1. Rebase: `git rebase B_branch staging`.  Rebasing the branch replays all of the commits from B on top of the _new_ `staging` branch (which now contains changes from A). Rebasing is the preferred method for handling these issues.  Push the `B_branch` and you'll be able to use VSTS to close the PR.
 2. Manual conflict resolution. Instead of using the VSTS UI to merge the PR, execute the merge locally. `git checkout staging && git merge B_branch`. Git will report merge conflicts, which you can resolve locally, manually, using your editor.  When you're done push the `staging` branch and VSTS will automatically close the open PR.
 
 ## Patching production/master
 
-Imagine that many PRs have been merged to `staging`, and you find a problem in production that needs a quick fix. At this point `staging` has moved far past `master`.  We code the fix to production in a new branch `prod_fix` and open up a PR against `master`.
-Once the PR on `master` is merged CI/CD takes care of deployment.
+Imagine that many PRs have been merged to `staging`, and you find a problem in production that needs a quick fix. At this point `staging` has moved far past `master`.  In this case we code the fix to production in a new branch cut from `master`, maybe called `prod_fix`. We set up a PR against `master` for reiew and discussion.
+
+Any QA or manual testing will take place in a one-off environment deployed from the `prod_fix` branch; with the Azure PaaS we could manually deploy to an empty Deployment Slot. Once the PR on `master` is merged CI/CD takes care of deployment to the production environment.
 
 Now we have to bring those new changes in master back into staging.  We use rebase again: `git rebase staging master`.
