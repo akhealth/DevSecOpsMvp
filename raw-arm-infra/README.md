@@ -4,7 +4,7 @@ Azure Resource Manager scripts are JSON files that describe resources like VMs, 
 
 See [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) for lots of good examples.
 
-The ARM script here is similar to the CLI outputs captured in `../powershell-infra/`, but has been hand written.
+The ARM script here is similar to the CLI outputs captured in `../powershell-cli-infra/`, but has been hand written.
 
 ARM scripts are nice because you can run them over and over again with the same results, unlike using the CLI which would error on duplicate resources.
 We can also use "group deployments" which are a nice way to track infrastructure changes.
