@@ -24,7 +24,7 @@ namespace aspnetapp.Controllers
             // string _password = "BaldEagle123";
 
             // Remote/Hybrid (SQL Server Auth)
-            string _serverName = "SQLServer"; // aka `hostname`
+            string _serverName = "vagrant-win10"; // aka `hostname`
             string _dataBaseName = "AKTestDataBase";
             string _userID = "hybuser";
             string _password = "hybpass";

@@ -26,7 +26,7 @@ See `./create-vm.bash` for a script that will create a new Azure VM
 Install Powershell: [https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell#get-powershell)
 Yes, this is Open Source. Soon it should work on a Mac.  Not all powershell modules are available for OSX yet.  AzureRM should be soon.
 
-Note: there is lots of development here right now, the easiest way to get a viable AzureRM PS environment is to click the link under "Command-line tools" -> "PowerShell" -> "Windows Install" on this page [https://azure.microsoft.com/en-us/downloads/](https://azure.microsoft.com/en-us/downloads/)
+Note: there is lots of development here right now, it seems like the easiest way to get a viable AzureRM PS environment is to click the link under "Command-line tools" -> "PowerShell" -> "Windows Install" on this page [https://azure.microsoft.com/en-us/downloads/](https://azure.microsoft.com/en-us/downloads/)
 
 Documentation for AzureRM cmdlets: [https://msdn.microsoft.com/en-us/library/mt125356.aspx](https://msdn.microsoft.com/en-us/library/mt125356.aspx)
 

@@ -1,5 +1,5 @@
 # Cloud Infrastructure 
-We highlight a couple options for cloud-based staging environments.
+We explore a couple options for cloud-based environments.
 
 ## Infrastructure as a Service
 
@@ -24,11 +24,13 @@ Azure App Service is more like a Platform-as-a-Service for .NET Apps.
 The VSTS Build pipeline also easily deploys to this service.
 There is also a **Free** plan limited to 60min/day of non-resting time.
 
-Learn more in [`appservice/README.md`](./appservice/README.md)
+The AppService also supports connecting to on-prem resources via the Azure Hybrid Connection.
+
+Learn more in [`appservice/README.md`](./appservice/README.md) and [`hybrid-connection/README.md`](./hybrid-connection/README.md)
 
 ## Cloud.gov
 [Cloud.gov](https://cloud.gov) is Platform as a Service(PaaS) running on AWS and operated by 18F.  It can run .NET Core appliations.
-Unfortunately cloud.gov only services federal customers right now. It stands as a proxy for things like [Heroku](https://heroku.com) and [CloudFoundryff](https://www.cloudfoundry.org/platform/).
+Unfortunately cloud.gov only services federal customers right now. It stands as a proxy for things like [Heroku](https://heroku.com) and [CloudFoundry](https://www.cloudfoundry.org/platform/).
 
 First, [Get a cloud.gov](https://cloud.gov/docs/getting-started/accounts/) account and [Set up the CLI](https://cloud.gov/docs/getting-started/setup/)
 
