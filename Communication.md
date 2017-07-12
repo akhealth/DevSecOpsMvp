@@ -18,8 +18,8 @@ There are several standing communication methods to use for both planning and ex
 * VSTS (tagged comments in pull requests)
 * Slack (out-of-email-band messaging)
 
-## Security and Operations Participation
-Whenever possible, the product team should have a delegate of the security and operations domain organizations on the product team participating in the sprint.  However, we must have two types of security and operations activity/participation/support at all times:
+## Development, Security and Operations Participation
+The product team will have at least one member of the DHSS development domain organizational unit at all times.  Whenever possible, the product team should have a delegate of the security and operations domain organizations on the product team participating in the sprint.  However, we must have two types of security and operations activity/participation/support at all times:
 * There must always be a designated security and operations representative on the team.  The designated individual(s) are responsible for identifying security and operations related concerns that may unexpectedly arise in the course of a sprint, and working with the product team to scope and address security and operations domain requirements.  These individuals could be assigned directly from the DHSS security and operations support organization units or delegated to others, as the security and operations units see fit.
 * Whenever there are proposed environment changes in the sprint scope, we _must_ have security and operations delegates on the product team for at least that sprint (including planning) to task and execute work-products that meet the security and operations requirements.
 
