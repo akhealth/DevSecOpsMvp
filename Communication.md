@@ -10,13 +10,13 @@ There are several standing communication methods to use for both planning and ex
 * VSTS (tagged comments in pull requests)
 * Slack (out-of-email-band messaging)
 
-## Blocker Topics
-This section identifies blockers that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.
+## Opportunities
+This section identifies blocking opportunities that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.
 
-### Development Related Blockers
+### Development Related Opportunities
 TBD
 
-### Operations Related Blockers
+### Operations Related Opportunities
 The following topics identify blockers that might inform improved DevOps practices related to the Operations area of responsibility:
 * What is the infrastructure team's role in the design process for an application that communicates across datacenters?
 * What are the operational responsibilities the infrastructure team carries that are impacted by Azure App Service PaaS?
@@ -24,7 +24,7 @@ The following topics identify blockers that might inform improved DevOps practic
 * How do we engage infrastructure/ops team if we're asking them to do something new?
 * Do we have preferences for future operational support about who is responsible for technical service monitoring and first response for cloud hosted applications?
 
-### Security Related Blockers
+### Security Related Opportunities
 The following topics identify blockers that might inform improved DevOps practices realted to the Security area of responsibility:
 * Assessing MS Azure FedRamp docs and understanding which controls the application developer/product team are responsible for (i.e., that we own and MS does not)
 * What is the Security MVP that supports new or changed non-production (dev/staging/etc) environments?
