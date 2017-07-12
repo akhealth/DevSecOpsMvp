@@ -38,6 +38,7 @@ Here are some best practices
 - Run powershell scripts from your repo, don't do "inline" scripting.
 - Declare secrets and other variables as Params in your script
 - Inputs for Params come from VSTS/Build Variables. Click the lock to encrypt and hide secret values.
+- Uncheck the "Fail on Standard Error" feature of VSTS build steps if your script should _not_ consider writing to STDERR a failure, and instead soley use `$LASTEXITCODE`.  This is handy in `push-to-github.ps1` because git always writes to STDERR. 
 
 This repo contains a couple examples of Powershell scripts meant to be run as a build step.
 See `dsc/upload-dsc.ps1`, `opensource/push-to-github.ps1`, `deploy/start-azure-app.ps1`.
