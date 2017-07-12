@@ -15,7 +15,7 @@ Whenever possible, the product team should have a delegate of the security and o
 * There must always be a designated security and operations representative on the team.  The designated individual(s) are responsible for identifying security and operations related concerns that may unexpectedly arise in the course of a sprint, and working with the product team to scope and address security and operations domain requirements.  These individuals could be assigned directly from the DHSS security and operations support organization units or delegated to others, as the security and operations units see fit.
 * Whenever there are proposed environment changes in the sprint scope, we _must_ have security and operations delegates on the product team for at least that sprint (including planning) to task and execute work-products that meet the security and operations requirements.
 
-## DevOpsEducation Resources
+## DevOps Education Resources
 The EIS-R project has developed a number of resources to support individuals new to DevOps and/or new to the EIS-R team.  These resources include:
 | Resource | Purpose |
 |----------------|:-------------------|
