@@ -25,6 +25,7 @@ The product team will have at least one member of the DHSS development domain or
 
 ## DevOps Education Resources
 The EIS-R project has developed a number of resources to support individuals new to DevOps and/or new to the EIS-R team.  These resources include:
+
 | Resource | Purpose |
 |----------------|:-------------------|
 | [Project Readme](https://github.com/18F/acq-alaska-dhss-modernization/blob/master/README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
