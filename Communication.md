@@ -10,10 +10,18 @@ There are several standing communication methods to use for both planning and ex
 * VSTS (tagged comments in pull requests)
 * Slack (out-of-email-band messaging)
 
-### Security and Operations Participation
+## Security and Operations Participation
 Whenever possible, the product team should have a delegate of the security and operations domain organizations on the product team participating in the sprint.  However, we must have two types of security and operations activity/participation/support at all times:
 * There must always be a designated security and operations representative on the team.  The designated individual(s) are responsible for identifying security and operations related concerns that may unexpectedly arise in the course of a sprint, and working with the product team to scope and address security and operations domain requirements.  These individuals could be assigned directly from the DHSS security and operations support organization units or delegated to others, as the security and operations units see fit.
 * Whenever there are proposed environment changes in the sprint scope, we _must_ have security and operations delegates on the product team for at least that sprint (including planning) to task and execute work-products that meet the security and operations requirements.
+
+## DevOpsEducation Resources
+The EIS-R project has developed a number of resources to support individuals new to DevOps and/or new to the EIS-R team.  These resources include:
+| Resource | Purpose |
+|----------------|:-------------------|
+| [Project Readme](https://github.com/18F/acq-alaska-dhss-modernization/blob/master/README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
+| [Project DevOps Vision](https://github.com/dhssalaska/DevOpsMvp/blob/master/DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
+| [Project DevOps MVP](https://github.com/dhssalaska/DevOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevOps tool and process "minimum viable product" (MVP) |
 
 ## Unblocking Opportunities
 This section identifies opportunities to unblock work that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.
