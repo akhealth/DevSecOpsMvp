@@ -14,7 +14,10 @@ There are several standing communication methods to use for both planning and ex
 This section identifies opportunities to unblock work that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.
 
 ### Development Related Opportunities
-TBD
+The following topics identify opportunities that might inform improved DevOps practices related the Development area of responsibility:
+* How can the Dev domain work be formalized?  E.g., procedures, design and communication templates/standards, checklists (e.g., P Wilkins email to S Taylor)
+* How do we educate our team to understand the question, "When is a change just another day of development and when is a change a _change_?"
+* Development => change, including environment change.  Environment change => security risks.  Security risks => security documentation and and security office review, education and approval.  Security documentation and SO review, ed, and approval => weeks or months of time.  _The existing process does not seem to scale to multiple environment changes in short periods of time._  How can we structure our development processes, artifacts and teams to efficiently address the security risks of development?
 
 ### Operations Related Opportunities
 The following topics identify opportunities that might inform improved DevOps practices related to the Operations area of responsibility:
