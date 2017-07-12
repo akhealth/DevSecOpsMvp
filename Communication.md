@@ -10,6 +10,9 @@ There are several standing communication methods to use for both planning and ex
 * VSTS (tagged comments in pull requests)
 * Slack (out-of-email-band messaging)
 
+### Security and Operations Participation
+Whenever possible, the product team should have a delegate of the security and operations domain organizations on the product team.  However, whenever there are proposed environment changes in the sprint scope, we _must_ have security and operations delegates on the product team for at least that sprint.
+
 ## Unblocking Opportunities
 This section identifies opportunities to unblock work that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.
 
