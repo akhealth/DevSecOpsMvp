@@ -71,9 +71,17 @@ If the authenticator is the DHSS domain, then a second authentication might not 
 * Using IBM SAM to front-end cloud will require an outbound connection to the cloud from IBM SAM.  This means we will need appropriate security documentation to request the firewall/DMZ changes to allow the IBM SAM WebSeal server to make an outbound connection from the SOA DMZ to the Azure hosted App Service app.
 
 ## Follow-ups
-### Would we move forward with a 2 domain requirement for authentication, or could we migrate everyone to the SOA domain and simplify our architecture
+### Would we move forward with a 2 domain requirement for authentication, or could we migrate everyone to the SOA domain and simplify our architecture?
 * P Wilkins asserts soa and dhss domain would either need to be replicated outside of an IBM SAM implementation, or we would move everyone to soa domain
+* S Taylor thinks we may have some shared understanding gaps about the design goals of the current authentication and authorization architecture.  Specifically, the application never knows about the Microsoft Active Directory `DHSS domain` or  `SOA domain`.  The application only knows about the user-identity that has been authenticated, and then uses that user-identity to authorize access requests for that user-identity.  Some of our discussion has focused on the idea that the application will need to be connected to or talk to one or more of the Active Directory domains.  We need to get a shared understanding of this and agree on preserving this architecture.
 
-### Follow-ups
-* We need to discover whether we can even successfully configure IBM SAM to front of the cloud hosted app.  We need to fail fast.  What is the shortest path to test this?
-* We need to have IBM SAM exception to allow communicating to the internet to reach the cloud app.  This exception will require a sufficient level of documentation to test configuring the ARIES non-prod IBM SAM services to support this test.  Can we separate this "Azure App Service App front-ended by ARIES non-prod IBM SAM system" from the full prototype system and get approval, or do we have to be blocked by keeping it all together and waiting on separate concerns like testing an EIS non-prod connection?
+### Anticipated environment changes
+* The non-production ARIES IBM SAM servers we would be leveraging to prototype this authentication architecture are hosted in the OIT DMZ
+* Communications in the OIT DMZ are disallowed by default and allowed by exception
+* Thus, we need to have IBM SAM exception to allow communicating to the internet to reach the cloud app from the IBM SAM/WebSeal server.
+* Do we need a security plan of some sort to support this change in the environment (expect answer is yes).
+
+### What is the shortest path to test the validity of using the IBM SAM components to handle authentication, etc., for the Azure hosted App Service app?
+* We need to discover whether we can even successfully configure IBM SAM to front of the cloud hosted app.  
+* We need to fail fast. Do we have to have a security plan for this?  
+* Should we need to update the broader prototype security plan for this, or should we submit a separate security plan?
