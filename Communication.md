@@ -1,13 +1,13 @@
 # DevOps Communication Plan
 DevOps is a new practice for DHSS.  The goal of the practice is to improve change management and remove delivery walls between the development, operations and security domains.  Ideally, the delivery processes ensure that all domain stakeholders' requirements are met as part of the process and, as a result, delivery speed _and quality_ of change to our customers and end-users increases.  _If quality is not good, delivery speed **will not** increase._
 
-Adopting this practice requires us to identify a communication plan that supports improving our DevOps and agile practices and addressing requirements that arise from the development, operations and security domain organizations at DHSS.  The communication plan should address:
+Adopting this practice requires us to identify a communication plan that supports improving our DevOps and agile practices and addressing requirements that arise from the development, operations and security domain organizations at DHSS.  The communication plan addresses:
 * Regular/standing communication needs and methods
 * Security and operations participation expectations
 * DevOps education resources
 * Opportunities within each of the development, operations and security domains to improve how we do business by unblocking traditionally long and sticky processes
 
-These communication plan topics can and should be refined and addressed as they become relevant in the work through the product team's backlog management tool.
+This communication plan can and should be refined.  In particular, the product team will update and use the [Unblocking Opportunities](#unblocking-opportunities) section content to identify and implement improvements, as needs/sticking points arise in the work managed via the product team's backlog.
 
 ## Regular/standing Communications
 There are several standing communication methods to use for both planning and executing work, including:
