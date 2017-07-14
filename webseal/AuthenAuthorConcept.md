@@ -27,7 +27,7 @@ IBM SAM includes functionality to grant/restrict access to users for specified b
 
 User accounts are added to the appropriate `SAM Group` to allow them to access specific production and non-production worker portal instances.  This configuration provides an additional layer of security authorization in addition to the application-based authorization functions implemented in the ARIES worker portal.  See the [ARIES  User Security Reference Guide](https://extranet.dhss.alaska.gov/pmo/home/DPA-EIS-Replacement/OPS/Shared%20Documents/ARIES%20State%20Project%20Team%20Training%20Materials/ARIES%20User%20Security%20Reference%20Guide.docx), section 4, especially section 4.4, for more information aobut worker portal access.
 
-### ARIES Worker Portal user authorization
+### ARIES Worker Portal user authorization note
 Authorization to access individual resources within the ARIES worker portal is managed as an administrative function of the worker portal, _not via SAM Groups_.  A user account is setup in the ARIES worker portal `Security Module`.  That user account is then mapped to a role and, finally, an `Employee Profile` is created for the user account. 
 
 ### Worker Portal access versus Worker Portal authorization
