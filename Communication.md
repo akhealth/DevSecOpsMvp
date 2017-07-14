@@ -10,7 +10,7 @@ Adopting this practice requires a communication plan that improves our DevOps an
 * A case study of actual development, operations and security domain collaboration
 * How we improve across the development, operations and security domains 
 
-The last bullet above is critical.  We run into problems with what seems to be a straight forward task.  An example is the prototype application we've been working on this sprint and early summer 2017.  See [Case Study: DHSS IT Development, Operations and Security Research & prototyping](#case-study-dhss-it-development-operations-and-security-research-prototyping) for a draft case study that points to real world challenges the development, operations and security teams have encountered working together to deliver work within the EIS-R project sprint cycles.
+The last bullet above is critical.  We run into problems with what seems to be a straight forward task.  An example is the prototype application we've been working on this sprint and early summer 2017.  See [Case Study: DHSS IT Development, Operations and Security Research & pPototyping](#case-study-dhss-it-development-operations-and-security-research-prototyping) for a draft case study that points to real world challenges the development, operations and security teams have encountered working together to deliver work within the EIS-R project sprint cycles.
 
 Agile and DevOps practices focus on a culture that values defining and doing small pieces of work, inspecting that work, and "failing fast" - all inside a short sprint timebox.  Small pieces of work means the work is broken down into pieces that we can start and complete within a single sprint.  Inspecting the work means we build inspection into our daily standups and into our sprint review and retrospective meetings.  Failing fast means reducing the time we spend on ideas that can't or won't work.  To succeed, we need to learn how to apply agile and DevOps in a cross-functional development, operations and security team where the work getting done supports requirements from all those domains.   
 
@@ -46,7 +46,7 @@ The EIS-R project has developed a number of education resources to support indiv
 | [Project DevOps Vision](https://github.com/dhssalaska/DevOpsMvp/blob/master/DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
 | [Project DevOps MVP](https://github.com/dhssalaska/DevOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevOps tool and process "minimum viable product" (MVP) |
 
-## Case Study: DHSS IT Development, Operations and Security Research & prototyping
+## Case Study: DHSS IT Development, Operations and Security Research & Prototyping
 This section describes an actual scenario of a backlog item scheduled in an EIS-R project sprint, and how the DHSS IT Development, Operations and Security staff responded to support the work.  In this draft, Development has attempted to capture our experience.  In order to serve as an effective example to improve our DevOps practice, we believe we must revise this draft to include detailed input from the Operations and Security staff involved.  It should be noted that there are limited procedures and rules at DHSS that guide how development requests work from operations and security.  The experience is, no doubt, challenging for staff from each domain.   
 
 ### The Scenario: Testing connectivity from Azure PaaS app to AK on-premise SQL Server
@@ -90,7 +90,7 @@ The DSO indicated their view that our efforts were creating a "$2 billion" risk 
 These meetings and discussions resulted in an agreement to complete an "abbreviated security plan".  An abbreviated security plan is not a formally recognized work-product in DHSS policy and procedure.  Even the abbreviated security plan involves significant effort.  During the first review of the abbreviated security plan with the DSO, the plan invoked additional questions and the Development and Operations staff are currently in process of revising the plan.
 
 ### Initial Conclusions
-Culturally and organizationally, this scenario invoked a number of challenges and opportunities, which we have drafted below with the intent to update with additional Operations and Security input at later point.
+Culturally and organizationally, this scenario invoked a number of challenges and opportunities, which we have drafted below.  Operations and Security were unable to provide input during the sprint in which we draft this initial plan.  We intend to update this document with additional Operations and Security input at later point in time.
 
 #### Secure Development Infrastructure (and Practice)
 There is no agreed procedure that explicitly allows assigned DHSS technical Development staff to securely establish and leverage development and test infrastructure.  The procedure that is recognized treats all infrastructure equally.  So, any development infrastructure is expected to meet the same bar as a fully fledged production system in both understanding a complete picture of what that infrastructure does, and in documenting that it does so securely.  Since the effort to achieve this prior to testing technical software and service features is actually untenable when integrating new software components, there is effectively no procedure. 
@@ -138,3 +138,8 @@ The following topics identify opportunities that might inform improved DevOps pr
     - Drafting the business needs, owners, data classification, solution description portions of a security plan
     - Drafting NIST 800-53 controls - can we draft these in some sort of sub-grouping (e.g., specific control families) that would let us draft, review and receive preliminary approval of a small subset within each two week sprint?
 * How can we ensure security is part of development and does not wait until the end?  Is this DSO participation on the team, or DSO delegation to members of the team?
+
+# Document History
+| Author | Date | Comments |
+|-------|:--------|:--------|
+| S Taylor | 2017.07.14 | Completed initial draft for Trello #156|
