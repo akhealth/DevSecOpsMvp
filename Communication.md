@@ -90,7 +90,7 @@ The DSO indicated their view that our efforts were creating a "$2 billion" risk 
 These meetings and discussions resulted in an agreement to complete an "abbreviated security plan".  An abbreviated security plan is not a formally recognized work-product in DHSS policy and procedure.  Even the abbreviated security plan involves significant effort.  During the first review of the abbreviated security plan with the DSO, the plan invoked additional questions and the Development and Operations staff are currently in process of revising the plan.
 
 ### Initial Conclusions
-Culturally and organizationally, this scenario invoked a number of challenges and opportunities, which we identify below with the hopes of gathering additional Operations and Security input.
+Culturally and organizationally, this scenario invoked a number of challenges and opportunities, which we have drafted below with the intent to update with additional Operations and Security input at later point.
 
 #### Secure Development Infrastructure (and Practice)
 There is no agreed procedure that explicitly allows assigned DHSS technical Development staff to securely establish and leverage development and test infrastructure.  The procedure that is recognized treats all infrastructure equally.  So, any development infrastructure is expected to meet the same bar as a fully fledged production system in both understanding a complete picture of what that infrastructure does, and in documenting that it does so securely.  Since the effort to achieve this prior to testing technical software and service features is actually untenable when integrating new software components, there is effectively no procedure. 
