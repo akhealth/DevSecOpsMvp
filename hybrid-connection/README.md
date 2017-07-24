@@ -62,3 +62,39 @@ Please see the following pages for further documentation from Microsoft.
 > The connection uses TLS 1.2 for security and SAS keys for authentication/authorization.
 
 [Hybrid Protocol Documentation](https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol)
+
+
+## Whitelists
+
+If our on-prem service lives in an environment where we must whitelist outbound connections, then we must whitelist various Azure/Hybrid things.
+
+Ref:
+- https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol
+- https://blogs.msdn.microsoft.com/waws/2017/06/30/things-you-should-know-web-apps-and-hybrid-connections/#WhiteList
+
+
+
+### Hybrid
+
+Machine w/ HCM must whitelist **both**:
+
+1. "Service Bus endpoint URL" : find this value in the HCM details screen labeld as "Service Bus Endpoint" (`sqlserverservicebus.servicebus.windows.net` for our demo)
+
+2. "Service Bus Gateways" : these are 128 different servers.  See discussion at "things you should know" link above.  128 different whitelists will have to be added for `G0-prod-[stamp]-010-sb.servicebus.windows.net` -> `G127-prod-[stamp]-010-sb.servicebus.windows.net`. (Hopefully we can use wildcards!?). `[stamp]` can be found with `nslookup`, again see doc above.
+
+### Webseal / auth
+
+Webseal must whitelist **one of**:
+
+1. Whitelist Azure AppService DNS entry for apps
+2. Obtain "static IP" for AppService and whitelist that
+
+## We still don't know
+
+1. Hybrid Conneciton docs mention that the HCM must have outbound access to "Azure over ports 80 and 443" (I also think we can configure those ports). This brings up a couple questions:
+
+a) In this context is "Azure" different from the known whitelists above? Or is it the same?
+b) 443 is good, but why is port 80 required? It makes security folks nervous.
+
+- https://docs.microsoft.com/en-us/azure/biztalk-services/integration-hybrid-connection-overview
+- https://docs.microsoft.com/en-us/azure/app-service/app-service-hybrid-connections
