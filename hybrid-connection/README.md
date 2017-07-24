@@ -82,6 +82,8 @@ Machine w/ HCM must whitelist **both**:
 
 2. "Service Bus Gateways" : these are 128 different servers.  See discussion at "things you should know" link above.  128 different whitelists will have to be added for `G0-prod-[stamp]-010-sb.servicebus.windows.net` -> `G127-prod-[stamp]-010-sb.servicebus.windows.net`. (Hopefully we can use wildcards!?). `[stamp]` can be found with `nslookup`, again see doc above.
 
+Note: various Hybrid docs mention that HCM must have "outbound access to Azure over ports 80 and 443" -- this is the same requirement we are dealing with here.
+
 ### Webseal / auth
 
 Webseal must whitelist **one of**:
@@ -89,12 +91,6 @@ Webseal must whitelist **one of**:
 1. Whitelist Azure AppService DNS entry for apps
 2. Obtain "static IP" for AppService and whitelist that
 
-## We still don't know
+### Notes
 
-1. Hybrid Conneciton docs mention that the HCM must have outbound access to "Azure over ports 80 and 443" (I also think we can configure those ports). This brings up a couple questions:
-
-a) In this context is "Azure" different from the known whitelists above? Or is it the same?
-b) 443 is good, but why is port 80 required? It makes security folks nervous.
-
-- https://docs.microsoft.com/en-us/azure/biztalk-services/integration-hybrid-connection-overview
-- https://docs.microsoft.com/en-us/azure/app-service/app-service-hybrid-connections
+- "New" Hybrid connections always and only communicate over 443. There is no port customization, and even though "80" is mentioned it is never used.
