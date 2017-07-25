@@ -1,11 +1,5 @@
 # Script
 
-## Pre-reqs
-
-- [ ] valid story in VSTS
-- [ ] a test that will break when we make story changes
-- [ ] consistently working Veracode scans
-
 ## Part 1: Starting new work
 
 [Open VSTS to Backlog page](https://alaskadhssba.visualstudio.com/DPA%20Experiments/_backlogs/board/Backlog%20items)
