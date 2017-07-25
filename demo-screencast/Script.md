@@ -1,18 +1,20 @@
 # Script
 
+Title: DevOps change management overview
+
 ## Part 1: Starting new work
 
-[Open VSTS to Backlog page](https://alaskadhssba.visualstudio.com/DPA%20Experiments/_backlogs/board/Backlog%20items)
+**Open VSTS HOME page**
 
-> We're using Visual Studio Team Services for project management, source control, and a continuous integration build pipeline. We'll touch on each, but for now we start with project management.
+> We're using Microsoft Visual Studio Team Services for project management, source control, and a continuous integration build pipeline. We'll touch on each, but for now we start with project management.
 
-> When I'm ready for new work I choose an item assigned to me in our current sprint.
+> When I'm ready for new work I choose an item assigned to me in our current sprint's kanban board. 
 
 Examine one card, mark it "in progress"
 
 > We use Git for source control. The first thing I do is make sure I have the latest code. I'll check out the staging branch and cut a new feature branch from there.
 
-`git checkout staging && git pull && git branch <feature>`
+`git checkout staging && git pull && git branch update-welcome-message`
 
 > Now I'm ready to make the changes from my story.
 
@@ -28,7 +30,7 @@ git diff
 git add .
 git commit
 Closes #<VSTS-Number>. Did _________
-git push
+git log
 ```
 
 ## Part 2: Continuous Integration
@@ -41,7 +43,7 @@ git push
 
 > We should be able to see our CI build now.
 
-[Open VSTS Builds page](https://alaskadhssba.visualstudio.com/DPA%20Experiments/_build/index?context=mine&path=%5C&definitionId=5&_a=completed)
+**Open VSTS Builds page**
 Watch build until a test fails
 
 > Uh oh, we didn't pass the build.  I wonder what happened... Oh, a test failed.
@@ -60,17 +62,17 @@ git push
 ```
 Watch build succeed in VSTS.
 
-> This build pipeline is our first defense. You can see how having good test coverage, and running tests on every push can catch lots of errors.  Even security can have its place at every push. 
+> Hopefully you can see how having good test coverage, and running tests on every push can catch lots of errors.  Even security can have its place at every push. 
 
 Explore Veracode scan results
 
-> Your teams will be alerted when builds fail.
+> Your teams will be alerted when builds succeed or fail.
 
 ## Part 3: Pull Requests
 
-> Now that I'm done with my changes and my build is passing my code needs to be reveiwed. We use Pull Requests for this.  It might be easiest to just see it in action.
+> Now that I'm done with my changes and my build is passing my code needs to be reviewed. We use Pull Requests for this.  It might be easiest to just see it in action.
 
-[Open new PR page](https://alaskadhssba.visualstudio.com/DPA%20Experiments/_git/DevOpsMvp/pullrequestcreate?targetRef=staging&sourceRef=master)
+**Open new PR page**
 
 > We'll create a new Pull Request.  We want to merge the changes from my feature branch into the staging branch, which corresponds with the staging environment.
 
@@ -78,23 +80,26 @@ Set up PR
 
 > There are conditions like number of reviewers that must be met before a PR can be merged. So we'll dust our hands and come back once other people have had a chance to review our changes.
 
-
 ## Part 4: Continuous Delivery
 
 Note: bug a couple people to review and approve the PR.
+
 View the PR feedback
 
-> We've gotten good feedback on our PR.  If there were any issues we would push more commits onto our feature branch, which would then be refelected in our PR.
+> We've gotten good feedback on our PR.  If there were any issues we would push more commits onto our feature branch, which would then be reflected in our PR.
 
-> Usually the person that opens a PR does not merge it, but in this case I'm going to.  Changes to the staging branch trigger our continous delivery server.  This is simliar to CI that we saw before, except the goal is deployment.
+> Usually the person that opens a PR does not merge it, but in this case I'm going to.  Changes to the staging branch trigger our continuos delivery server.  This is similar to CI that we saw before, except the goal is deployment.
 
 > We're hosting our staging environment in Microsoft Azure's App Service -- a platform as a service running in Azure. 
 
-Visit app running in app service, see the old chnages.
+Visit app running in app service, see the old changes.
+
 Merge PR
 
 > Now CI will run on the staging branch.  We expect the same results.  A successful build on the staging branch triggers CD
 
-Watch CI
-[Watch CD](https://alaskadhssba.visualstudio.com/DPA%20Experiments/_release?definitionId=0&_a=releases)
+Watch CI and CD
+
 Visit app again and verify the change is there.
+
+> This is how changes are made and monitored in our environment. 
