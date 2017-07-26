@@ -12,7 +12,7 @@ namespace aspnetapp.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["WelcomeMessage"] = "Welcome to the DevOps MVP demo web app.";
+            ViewData["WelcomeMessage"] = "Thanks for visiting the DevOps MVP demo website!";
             return View("Index");
         }
 
