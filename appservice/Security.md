@@ -87,6 +87,8 @@ Microsoft further describes a patching protocol in their FedRAMP Moderate SSP in
 - 90 days for moderate vulnerabilities
 - 180 days for low vulnerabilities
 
+Microsoft does not, obviously, patch the custom code of the application.  Microsoft includes integration points for static code scanning of the application code itself in their Visual Studio Team Services build/continuous-integration feature.  They also offer integration within the App Service for cost-add scanning with Tinfoil, as noted above.  It is up to the application  DevOps team to leverage these capabilities for identifying and correcting vulnerabilities in the application code itself.
+
 ## App Service Administration
 
 Azure permissions are managed via user-identities established in the Azure portal and RBAC applied at a resource group and resource level to grant those user-identities permissions. An App Service Plan, an App Service Deployment-slot and an App Service App are all resources within Azure and each can be secured via Azure RBAC.
