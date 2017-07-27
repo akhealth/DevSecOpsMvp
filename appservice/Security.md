@@ -13,7 +13,7 @@ App Service applications run on virtualized servers and the platform handles sca
 App Service clusters virtual servers into a single unit called a `scale unit`. An App Service scale unit is a collection of servers that host and run applications.  A typical scale unit can have more than 1,000 servers.  Each scale unit is autonomous and can operate on its own.  The fundamental build block of an Azure App Service scale unit is an `Azure Cloud Service deployment`.
 
 ### Global, Geo-Distributed Architecture
-App Service is designed to scale globally.  To suppor this, every Azure region leverages sets of `regional control units`, including one special control unit used as a gateway for all management API calls.  For example, when a customer makes a request to create a new aplication (via portal, CLI or Azure REST API), the requst is routed to a central Azure endpoint.  `Azure Resource Manager` (ARM) lets you work with different Azure resources in a specific application as a single group.  the ARM API provides a management interface, but proxies management commands to individual Azure resources, via the service API of that resource.  The Azure App Service service API is called the App Service 'Geo-Master'.
+App Service is designed to scale globally.  To support this, every Azure region leverages sets of `regional control units`, including one special control unit used as a gateway for all management API calls.  For example, when a customer makes a request to create a new aplication (via portal, CLI or Azure REST API), the requst is routed to a central Azure endpoint.  `Azure Resource Manager` (ARM) lets you work with different Azure resources in a specific application as a single group.  the ARM API provides a management interface, but proxies management commands to individual Azure resources, via the service API of that resource.  The Azure App Service service API is called the App Service 'Geo-Master'.
 
 The Geo-Master has context about all scale units worldwide.  For example, when creating a new App Service application, Geo-Master finds the most suitable scale unit for your application and then forwards the create request to that scale unit.
 
@@ -49,7 +49,7 @@ Each App Service scale unit uses `Azure SQL Database` to persist application met
 
 #### Data Role
 
-Each of the roles within the scale unit require specific metadata about the application to perform their function within the scale unit.  The `Data Role` fulfills a caching layer between the SQL Azure Database role and all other roles in a given scale unit.  It abstracts the data layer from the rest of the roles, improving scal and performance, as well as simplifying software development and maintenance.
+Each of the roles within the scale unit require specific metadata about the application to perform their function within the scale unit.  The `Data Role` fulfills a caching layer between the SQL Azure Database role and all other roles in a given scale unit.  It abstracts the data layer from the rest of the roles, improving scale and performance, as well as simplifying software development and maintenance.
 
 ### Application Slots
 
