@@ -14,7 +14,7 @@ The Geo-Master has context about all scale units worldwide.  For example, when c
 
 ## Scale Unit Architecture
 
-Azure App Service scale unit's virtual server compute resources are architecturally divided to fulfill a number of different functions, or `roles`, within the scale unit.  The majority of servers in a scale unit are `Web Workers` that actually execute the application's functions.  The Web Worker and other within the scale unit are defined below.
+Azure App Service scale unit's virtual server compute resources are architecturally divided to fulfill a number of different functions, or `roles`, within the scale unit.  The majority of servers in a scale unit are `Web Workers` that actually execute the application's functions.  The Web Worker and other roles within the scale unit are defined below.
 
 ### Web Worker Role
 
