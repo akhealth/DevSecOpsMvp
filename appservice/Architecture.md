@@ -52,7 +52,7 @@ App Service has a feature called `deployment slots`.  Deployment slots support d
 
 Each deployment slot is a full copy of the application in its own right.  This means that the application can have its own custom domain, different SSL certificates, different application settings, etc.  It also means each slot can be assigned to its own App Service Plan, though by default, the slots are assigned to the same App Service Plan.
 
-Application deployment slots on the same App Service Plan run on the same servers.  So, running in the same App Service Plan can lead to problems in certain scenarios.  For example, running a performance load test against a staging copy of the application in one slot, while running production in another slot on the same plan can result in CPU or memor constraints.
+Application deployment slots on the same App Service Plan run on the same servers.  So, running in the same App Service Plan can lead to problems in certain scenarios.  For example, running a performance load test against a staging copy of the application in one slot, while running production in another slot on the same plan can result in CPU or memory constraints.
 
 ## Scale Unit Networking
 Each scale unit is deployed on a specific `Cloud Service` and has a single virtual IP (VIP) address exposed to the world.  All applications allocated to a given unit of scale are serviced through this VIP.
