@@ -5,7 +5,7 @@ We use an Azure Hybrid Connection to connect to an on-prem SQL Server from withi
 ## Enabling Hybrid Connection
 
 Hybrid Connections require at least a "Standard" App Service plan.
-The `az` client does not yet support setting up hybrid connections.  ARM or Terrafrom must be used to fully automate this solution.
+The `az` client does not yet support setting up hybrid connections.  ARM or Terraform must be used to fully automate this solution.
 
 For now we just enable the Hybrid Connection from the Azure portal.  `App Service -> Networking -> Hybrid Connections`
 
@@ -45,7 +45,7 @@ $sqlconn = New-Object System.Data.SqlClient.SqlConnection($connstr)
 $sqlconn.Open();
 $sqlconn.Close();
 ```
-**\*Note**: the `User ID` and `Password` just above are SQL Server Auth credentails that you'll have to set up. 
+**\*Note**: the `User ID` and `Password` just above are SQL Server Auth credentials that you'll have to set up.
 
 **Further, the connection string is _identical_ for local/VM and Hybrid/PaaS connections.** This is the magic of Hybrid Connections.
 
@@ -62,3 +62,36 @@ Please see the following pages for further documentation from Microsoft.
 > The connection uses TLS 1.2 for security and SAS keys for authentication/authorization.
 
 [Hybrid Protocol Documentation](https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol)
+
+
+## Whitelists
+
+If our on-prem service lives in an environment where we must whitelist outbound connections, then we must whitelist various Azure/Hybrid things.
+
+Ref:
+- https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol
+- https://blogs.msdn.microsoft.com/waws/2017/06/30/things-you-should-know-web-apps-and-hybrid-connections/#WhiteList
+
+
+### Hybrid
+
+Machine w/ HCM must whitelist **all of**:
+
+1. "Service Bus endpoint URL" : find this value in the HCM details screen labeled as "Service Bus Endpoint" (`sqlserverservicebus.servicebus.windows.net` for our demo)
+
+2. "Service Bus Gateways" : these are 128 different servers.  See discussion at "things you should know" link above.  128 different whitelists will have to be added for `G0-prod-[stamp]-010-sb.servicebus.windows.net` -> `G127-prod-[stamp]-010-sb.servicebus.windows.net`. (Hopefully we can use wildcards!?). `[stamp]` can be found with `nslookup`, again see doc above.
+
+3. "Azure IP Address" : find this value in the HCM details screen labeled "Azure IP Address"
+
+Note: various Hybrid docs mention that HCM must have "outbound access to Azure over ports 80 and 443" -- this is the same requirement we are dealing with here.
+
+### Webseal / auth
+
+Webseal must whitelist **one of**:
+
+1. Whitelist Azure AppService DNS entry for apps
+2. Obtain "static IP" for AppService and whitelist that
+
+### Notes
+
+- "New" Hybrid connections always and only communicate over 443. There is no port customization, and even though "80" is mentioned it is never used.
