@@ -32,7 +32,7 @@ Applications need storage to hold content, such as HTML, .js, image, or code fil
 
 ### API Controller Role
 
-`API Controllers` fulfill incoming Geo-Master requests within the scale unit.  For example, when Geo-Master passes an API call to create a new application, the API controller orchestrates the steps to createe the application.  When you reset your application via the Azure portal, it is the API controller that notifies all Web Workers allocated for your application to restart your app.
+`API Controllers` fulfill incoming Geo-Master requests within the scale unit.  For example, when Geo-Master passes an API call to create a new application, the API controller orchestrates the steps to create the application.  When you reset your application via the Azure portal, it is the API controller that notifies all Web Workers allocated for your application to restart your app.
 
 ### Publisher Role
 
