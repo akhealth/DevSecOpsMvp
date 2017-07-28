@@ -20,7 +20,7 @@ Azure App Service scale unit's virtual server compute resources are architectura
 
 Applications in Azure App Service are run on Windows or Linux servers and are referred to as `Web Workers` or `Workers` for short.  
 
-Web Workers can either be `Dedicated Workers` or `Shared Workers`.  The type of Worker dependings on selections in the `App Service Plan`.
+Web Workers can either be `Dedicated Workers` or `Shared Workers`.  The type of Worker depends on selections in the `App Service Plan`.
 
 ### Front End Role
 
