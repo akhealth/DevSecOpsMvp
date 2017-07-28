@@ -3,7 +3,7 @@
 ## Introduction
 This document contains information learned about `Azure App Service` security.  In this version, we touch on a number of security features of the Azure App Service and provide a brief overview of patching and App Service permission management.
 
-Azure App Service is architected to function on a global scale.  We highly recommend reaching our [brief architectural overview of App Service](/Architecture.md) before proceeding with the security information in this document.
+Azure App Service is architected to function on a global scale.  We highly recommend reading our [brief architectural overview of App Service](/Architecture.md) before proceeding with the security information in this document.
 
 ## General App Service Security Information
 [Microsoft Azure provides substantial security documentation for App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-security-readme).  This includes a variety of security capabilities and topics such as:
