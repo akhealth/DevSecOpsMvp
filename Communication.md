@@ -42,7 +42,7 @@ The EIS-R project has developed a number of education resources to support indiv
 
 | Resource | Purpose |
 |----------------|:-------------------|
-| [Project Readme](./README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
+| [Project Readme](https://github.com/18F/acq-alaska-dhss-modernization/blob/master/README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
 | [Project DevOps Vision](./DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
 | [Project DevOps MVP](https://github.com/dhssalaska/DevOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevOps tool and process "minimum viable product" (MVP) |
 | [Change management screencast](./demo-screencast/change-management-screencast.mp4) | A screencast covering basic change management, featuring VSTS, Git, .NET Core, CI, CD, Azure AppService |
