@@ -30,6 +30,6 @@ Microsoft does not, obviously, patch the custom code of the application.  Micros
 
 Azure permissions are managed via user-identities established in the Azure portal and `resource based access control` (RBAC) applied at an `Azure Resource Group` and `Azure Resource` level to grant those user-identities permissions. An `App Service Plan`, an `App Service Deployment-slot` and an `App Service App` are all resources within Azure and each can be secured via Azure RBAC.
 
-It is important to note that authentication and authorization for access to the business features of a specific App Service hosted application is a separate topic from App Service administration, and can be designed configured in a number of ways.  
+It is important to note that authentication and authorization for access to the business features of a specific App Service hosted application is a separate topic from App Service administration, and can be designed and configured in a number of ways.  
 
 In our prototyping efforts and this DevOps MVP, we are assuming that authentication is architecturally separated from the application to support single sign on.  The App Service hosted application is then configured to receive the authenticated user-identity token with the request and to apply authorization rules native to the application to that user-identity for validating whether the user-identity has access to a specific application resource/feature.
