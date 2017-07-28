@@ -28,7 +28,7 @@ Microsoft does not, obviously, patch the custom code of the application.  Micros
 
 ## App Service Administration
 
-Azure permissions are managed via user-identities established in the Azure portal and `resource based access control` (RBAC) applied at a resource group and resource level to grant those user-identities permissions. An App Service Plan, an App Service Deployment-slot and an App Service App are all resources within Azure and each can be secured via Azure RBAC.
+Azure permissions are managed via user-identities established in the Azure portal and `resource based access control` (RBAC) applied at an `Azure Resource Group` and `Azure Resource` level to grant those user-identities permissions. An App Service Plan, an App Service Deployment-slot and an App Service App are all resources within Azure and each can be secured via Azure RBAC.
 
 It is important to note that authentication and authorization for access to the business features of a specific App Service hosted application is a separate topic from App Service administration, and can be designed configured in a number of ways.  
 
