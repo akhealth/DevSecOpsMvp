@@ -2,6 +2,8 @@
 
 Azure App Service is Azure's PaaS.  You bring the application and they do everything else: infrastructure, logging, monitoring, scaling, etc.
 
+See App Service [Architecture](/appservice/Architecture.md) and [Security](/appservice/Security.md) for information about those topics.
+
 ## Automation
 
 ### TF/ARM
