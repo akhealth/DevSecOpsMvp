@@ -43,8 +43,9 @@ The EIS-R project has developed a number of education resources to support indiv
 | Resource | Purpose |
 |----------------|:-------------------|
 | [Project Readme](https://github.com/18F/acq-alaska-dhss-modernization/blob/master/README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
-| [Project DevOps Vision](https://github.com/dhssalaska/DevOpsMvp/blob/master/DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
+| [Project DevOps Vision](./DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
 | [Project DevOps MVP](https://github.com/dhssalaska/DevOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevOps tool and process "minimum viable product" (MVP) |
+| [Change management screencast](./demo-screencast/change-management-screencast.mp4) | A screencast covering basic change management, featuring VSTS, Git, .NET Core, CI, CD, Azure AppService |
 
 ## Case Study: DHSS IT Development, Operations and Security Research & Prototyping
 This section describes an actual scenario of a backlog item scheduled in an EIS-R project sprint, and how the DHSS IT Development, Operations and Security staff responded to support the work.  In this draft, Development has attempted to capture our experience.  In order to serve as an effective example to improve our DevOps practice, we believe we must revise this draft to include detailed input from the Operations and Security staff involved.  It should be noted that there are limited procedures and rules at DHSS that guide how development requests work from operations and security.  The experience is, no doubt, challenging for staff from each domain.   
