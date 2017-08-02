@@ -21,11 +21,11 @@ Following is an ordered list that covers change management in a similar way to t
 2. Use git locally to cut a new feature branch from `staging`.
 3. Code your changes.
 4. Run automated test suite locally and ensure it is successful.
-5. Push your feature branch to VSTS, triggering Continuous Integration.
-6. Ensure that the new CI build is successful.
-7. Create a Pull Request in VSTS from your feature branch into `staging`.
+5. Push your feature branch to VSTS.
+6. Create a Pull Request in VSTS from your feature branch into `staging`.
+7. Ensure that the Continuous Integration build associated with the PR is successful.
 8. Communicate with others about your changes, receive feedback in the PR.
 9. Receive approval and satisfy any other merge gates on the PR.
-10. Merge the changes into `staging` thereby closing the PR.
+10. Someone, usually not you, merges the changes into `staging` thereby closing the PR.
 11. Ensure the new CI build on `staging` is successful.
 12. Observe Continuous Delivery and deployment of changes to the staging environment. 
