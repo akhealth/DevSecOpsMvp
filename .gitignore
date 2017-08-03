@@ -7,3 +7,4 @@ raw-arm-infra/ps-arm-vars.json
 env.ps1
 *tfstate*
 terraform.tfvars
+.vscode
