@@ -1,6 +1,6 @@
 # Change Management
 
-Here, change management refers to the process by which code is changed and deployed. The code in question could be a web application like [our demo asp.net app](../aspnetapp/), [scripts run during build processes](../opensource/push-to-github.ps1), [infrastructure code](../terraform/aspnetapp.tf), etc.
+Here, change management refers to the process by which code is changed and deployed. The code in question could be a web application like [our demo asp.net app](../aspnetapp), [scripts run during build processes](../opensource/push-to-github.ps1), [infrastructure code](../terraform/aspnetapp.tf), etc.
 
 Change management process starts with new work and ends with deployment.
 
