@@ -1,10 +1,10 @@
 location="westus2"
 group_name="staging-app-service"
-service_name="DevOpsMVP-staging"
+service_name="DevSecOpsMVP-staging"
 num_workers="1"
 
 # The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small),
-plan_name="DevOpsMVP-standard"
+plan_name="DevSecOpsMVP-standard"
 tier="S1"  # Standard tier is required for HybirdConnections.
 
 # Create AppService
@@ -18,8 +18,8 @@ az webapp create --name $service_name --plan $plan_name --resource-group $group_
 az webapp deployment user set --user-name $DEPLOY_USER --password $DEPLOY_PASS
 url=$(az webapp deployment source config-local-git --name $service_name --resource-group $group_name --query url --output tsv)
 
-# $url will look like: https://AKAzureAdmin@devopsmvp-staging.scm.azurewebsites.net/DevOpsMVP-staging.git
-# AzureApps uses Kudu for deployment.  See this url for a cool dashboard: https://devopsmvp-staging.scm.azurewebsites.net/
+# $url will look like: https://AKAzureAdmin@devsecopsmvp-staging.scm.azurewebsites.net/DevSecOpsMVP-staging.git
+# AzureApps uses Kudu for deployment.  See this url for a cool dashboard: https://devsecopsmvp-staging.scm.azurewebsites.net/
 
 # Configure local git
 git remote add azure $url

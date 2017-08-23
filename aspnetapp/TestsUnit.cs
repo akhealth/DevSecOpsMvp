@@ -24,7 +24,7 @@ namespace AspNetAppTests.Controllers.Unit
             // Simple debugging statements *only show up when tests fail*
             // Console.WriteLine(result.ViewData["WelcomeMessage"]);
 
-           StringAssert.Contains(result.ViewData["WelcomeMessage"].ToString(), "DevOps MVP");
+           StringAssert.Contains(result.ViewData["WelcomeMessage"].ToString(), "DevSecOps MVP");
         }
 
         [TestMethod]

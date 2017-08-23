@@ -1,25 +1,25 @@
-# DevOps Communication Plan
+# DevSecOps Communication Plan
 
 ## Introduction
-DevOps is a new practice for DHSS.  The goal of the practice is to improve change management and remove delivery walls between the development, operations and security domains.  Ideally, the delivery processes ensure that all domain stakeholders' requirements are met as part of the process and, as a result, delivery speed _and quality_ increase.  _If quality is not good across development, operations and security, the poorly met requirements will create domain resistance to change, and delivery speed **will not** increase._
+DevSecOps is a new practice for DHSS.  The goal of the practice is to improve change management and remove delivery walls between the development, operations and security domains.  Ideally, the delivery processes ensure that all domain stakeholders' requirements are met as part of the process and, as a result, delivery speed _and quality_ increase.  _If quality is not good across development, operations and security, the poorly met requirements will create domain resistance to change, and delivery speed **will not** increase._
 
-Adopting this practice requires a communication plan that improves our DevOps and agile practices and addresses the DHSS organization's development, operations and security domain requirements.  The communication plan includes:
+Adopting this practice requires a communication plan that improves our DevSecOps and agile practices and addresses the DHSS organization's development, operations and security domain requirements.  The communication plan includes:
 * Regular/standing communication needs and methods
 * Security and operations participation expectations
-* DevOps education resources
+* DevSecOps education resources
 * A case study of actual development, operations and security domain collaboration
 * How we improve across the development, operations and security domains 
 
 The last bullet above is critical.  We run into problems with what seems to be a straight forward task.  An example is the prototype application we've been working on this sprint and early summer 2017.  See [Case Study: DHSS IT Development, Operations and Security Research & pPototyping](#case-study-dhss-it-development-operations-and-security-research-prototyping) for a draft case study that points to real world challenges the development, operations and security teams have encountered working together to deliver work within the EIS-R project sprint cycles.
 
-Agile and DevOps practices focus on a culture that values defining and doing small pieces of work, inspecting that work, and "failing fast" - all inside a short sprint timebox.  Small pieces of work means the work is broken down into pieces that we can start and complete within a single sprint.  Inspecting the work means we build inspection into our daily standups and into our sprint review and retrospective meetings.  Failing fast means reducing the time we spend on ideas that can't or won't work.  To succeed, we need to learn how to apply agile and DevOps in a cross-functional development, operations and security team where the work getting done supports requirements from all those domains.   
+Agile and DevSecOps practices focus on a culture that values defining and doing small pieces of work, inspecting that work, and "failing fast" - all inside a short sprint timebox.  Small pieces of work means the work is broken down into pieces that we can start and complete within a single sprint.  Inspecting the work means we build inspection into our daily standups and into our sprint review and retrospective meetings.  Failing fast means reducing the time we spend on ideas that can't or won't work.  To succeed, we need to learn how to apply agile and DevSecOps in a cross-functional development, operations and security team where the work getting done supports requirements from all those domains.   
 
 This communication plan can and should be refined.  In particular, the product team will add case studies as we practice.  Additionally, we will update and use the [Other Challenges and Opportunities](#other-challenges-and-opportunities) section content to identify and implement challenges and opportunites, as needs/sticking points arise in the work managed via the product team's backlog.  While theoretical challenges and opportunities can be useful, challenges and opportunities we actually experience should be the first focus and primary driver of proposed improvements.
 
 ## Regular/standing Communications Resources
 There are several standing communication methods to use for both planning and executing work, including:
 * Bi-weekly sprint review/retro/grooming/planning meetings
-* DevOps weekly standing show and tell meeting
+* DevSecOps weekly standing show and tell meeting
 * Daily product team standup/scrum
 * Trello (tagged comments on individual cards)
 * VSTS (tagged comments in pull requests)
@@ -37,18 +37,18 @@ The product team will have at least one member of the DHSS development domain or
     These individuals could be assigned directly from the DHSS security and operations support organization units or delegated to other DHSS staff, as the security and operations units see fit.
 * Whenever there are proposed environment changes in the sprint scope, we _must_ have security and operations domain staff members on the product team for at least that sprint (including planning) to task and execute work-products that meet the security and operations requirements related to those environment changes and to keep the changes moving forward and keep related work unblocked.
 
-## DevOps Education Resources
-The EIS-R project has developed a number of education resources to support individuals new to DevOps and/or new to the EIS-R team.  These resources include:
+## DevSecOps Education Resources
+The EIS-R project has developed a number of education resources to support individuals new to DevSecOps and/or new to the EIS-R team.  These resources include:
 
 | Resource | Purpose |
 |----------------|:-------------------|
 | [Project Readme](https://github.com/18F/acq-alaska-dhss-modernization/blob/master/README.md)|Background information on the EIS-R project.  Includes our approach/strategy and links to mission model canvas and product roadmap | 
-| [Project DevOps Vision](./DevOps.md) | Our project vision for the value of DevOps and our goals in using it |
-| [Project DevOps MVP](https://github.com/dhssalaska/DevOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevOps tool and process "minimum viable product" (MVP) |
+| [Project DevSecOps Vision](./DevSecOps.md) | Our project vision for the value of DevSecOps and our goals in using it |
+| [Project DevSecOps MVP](https://github.com/dhssalaska/DevSecOpsMvp) | Our project repository containing the documentation, sample code, and learning we've done for our DevSecOps tool and process "minimum viable product" (MVP) |
 | [Change management screencast](./demo-screencast/change-management-screencast.mp4) | A screencast covering basic change management, featuring VSTS, Git, .NET Core, CI, CD, Azure AppService |
 
 ## Case Study: DHSS IT Development, Operations and Security Research & Prototyping
-This section describes an actual scenario of a backlog item scheduled in an EIS-R project sprint, and how the DHSS IT Development, Operations and Security staff responded to support the work.  In this draft, Development has attempted to capture our experience.  In order to serve as an effective example to improve our DevOps practice, we believe we must revise this draft to include detailed input from the Operations and Security staff involved.  It should be noted that there are limited procedures and rules at DHSS that guide how development requests work from operations and security.  The experience is, no doubt, challenging for staff from each domain.   
+This section describes an actual scenario of a backlog item scheduled in an EIS-R project sprint, and how the DHSS IT Development, Operations and Security staff responded to support the work.  In this draft, Development has attempted to capture our experience.  In order to serve as an effective example to improve our DevSecOps practice, we believe we must revise this draft to include detailed input from the Operations and Security staff involved.  It should be noted that there are limited procedures and rules at DHSS that guide how development requests work from operations and security.  The experience is, no doubt, challenging for staff from each domain.   
 
 ### The Scenario: Testing connectivity from Azure PaaS app to AK on-premise SQL Server
 Project Trello card #136 "Build MVP SQL Server on-prem with HCM" referred to proving a configuration that tested connectivity between an Azure PaaS App Service application and an Alaska datacenter hosted server.  The product team had already proven the software could work outside the Alaska datacenter.  So, this task focused on validating the functionality worked when the SQL Server with hybrid connection manager (HCM) node moved into a State of Alaska hosting environment.  Technically, the product team saw this as a simple task to:
@@ -81,7 +81,7 @@ Development then granted access to the 18F technical resource attempting to exec
 At this point, the 18F technical resource proceeded with the testing.  The first attempt did not succeed.  So, the 18F technical resource began troubleshooting.  
 
 #### Stopping Work: Security Office Determination of Unknown Risks
-Before 18F could complete troubleshooting the failed test, the DSO heard something (_follow-up: what did they hear?  Something in the weekly DevOps Show and Tell on 6/14?_) that made them worried we were doing something very risky to production ARIES.  Around 6/15/2017, the DSO contacted Chris Jones at OIT and suggested that the server should be shutdown due to unacceptable security risks.  Based on the report from the DHSS DSO, OIT heard a request that the server be shutdown and complied, which terminated the testing and troubleshooting 18F was performing.  
+Before 18F could complete troubleshooting the failed test, the DSO heard something (_follow-up: what did they hear?  Something in the weekly DevSecOps Show and Tell on 6/14?_) that made them worried we were doing something very risky to production ARIES.  Around 6/15/2017, the DSO contacted Chris Jones at OIT and suggested that the server should be shutdown due to unacceptable security risks.  Based on the report from the DHSS DSO, OIT heard a request that the server be shutdown and complied, which terminated the testing and troubleshooting 18F was performing.  
 
 #### Assessing Risk: Meetings and a "Security Plan"
 At this point, meetings and discussions ensued to understand what we were "really doing" and what the risks were.  Development tried to comply with the request by articulating the big picture of the full prototype testing objectives, i.e., all objectives including those beyond Trello #136.  Development also tried to clarify that, while less than ideal, we did not need to do everything at once.  I.e., If it would reduce risk to an acceptable level, we could test the Azure PaaS App Service to HSSARIESSQ-EXT and then disconnect that link completely before testing the data access to ARIES Test.  
@@ -101,24 +101,24 @@ The DHSS Operations staff historically owns the "what, where, why, how" of creat
 
 Development and Operations do not have a published and shared set of design standards, and do not have an operating level agreement (OLA) that dictates what Development can request from Operations and how Development must request it.  So, Development initiatives inevitably end up bogged down in a series of meetings and exercises where Operations staff want to know "what we're doing" when we make such a request.  Note that all of these problems are exacerbated in infrastructure as a service scenarios like the OIT flex-pod hosting environment and, in the future, Azure cloud.  Without policy and procedure that delegates a clear level of authority to support research and design work by Development, Development is always subject to Operations and Security veto of exploring technical ideas.
 
-#### Trust, Procedures and DevOps
+#### Trust, Procedures and DevSecOps
 One area that DHSS Development, Operations and Security staff excel at is interpersonal relations and trust-building.  The IT management team recognizes the pitfalls of getting stuck, and they have evolved a team with good communications skills.  This results in a base level of trust: the shared perception that everyone is on the same team and - while first and foremost covering their own domain - everyone is genuinely working to help the rest of the team.  
 
-Throughout this case study, we talk about "Development, Operations and Security" as separate entities.  The traditional domain walls that DevOps aims to remove are fully intact throughout much of the story.  The flexibility in these walls at DHSS is likely mostly due to good management communication and a minimum of procedural walls insulating each domain from the other.  In some ways, we are not positioned so far from a DevOps world.
+Throughout this case study, we talk about "Development, Operations and Security" as separate entities.  The traditional domain walls that DevSecOps aims to remove are fully intact throughout much of the story.  The flexibility in these walls at DHSS is likely mostly due to good management communication and a minimum of procedural walls insulating each domain from the other.  In some ways, we are not positioned so far from a DevSecOps world.
 
-The most significant challenge DHSS may face, however, is that our agreed upon procedures do not provide enough support for really accelerating the work; trust by itself is not enough for domain experts to know their requirements are being met.  The opportunity at DHSS is that a minimum of procedures can more easily be tailored to a DevOps world.  The retrofit/remodel to move from a traditional Development, Operations, Security silo organization to a DevOps organization may be easier than elsewhere.
+The most significant challenge DHSS may face, however, is that our agreed upon procedures do not provide enough support for really accelerating the work; trust by itself is not enough for domain experts to know their requirements are being met.  The opportunity at DHSS is that a minimum of procedures can more easily be tailored to a DevSecOps world.  The retrofit/remodel to move from a traditional Development, Operations, Security silo organization to a DevSecOps organization may be easier than elsewhere.
 
 ## Other Challenges and Opportunities
-This section identifies more general challenges and opportunities to unblock work that we need to address by communicating across development, operations and security to support DevOps work getting done and ensure each domain's requirements are met.  The information in this section should be refined and also turned into specific backlog work, where appropriate, to improve our DevOps practice.
+This section identifies more general challenges and opportunities to unblock work that we need to address by communicating across development, operations and security to support DevSecOps work getting done and ensure each domain's requirements are met.  The information in this section should be refined and also turned into specific backlog work, where appropriate, to improve our DevSecOps practice.
 
 ### Development Related Opportunities
-The following topics identify opportunities that might inform improved DevOps practices related the Development domain concerns:
+The following topics identify opportunities that might inform improved DevSecOps practices related the Development domain concerns:
 * How can the Dev domain work be formalized?  E.g., procedures, design and communication templates/standards, checklists (e.g., P Wilkins email to S Taylor)
 * How do we educate our team to understand the question, "When is a change just another day of development and when is a change a _change_?"
 * Development => change, including environment change.  Environment change => security risks.  Security risks => security documentation and and security office review, education and approval.  Security documentation and SO review, ed, and approval => weeks or months of time.  _The existing process does not seem to scale to multiple environment changes in short periods of time._  How can we structure our development processes, artifacts and teams to efficiently address the security risks of development?
 
 ### Operations Related Opportunities
-The following topics identify opportunities that might inform improved DevOps practices related to the Operations domain concerns:
+The following topics identify opportunities that might inform improved DevSecOps practices related to the Operations domain concerns:
 * What is the infrastructure team's role in the design process for an application that communicates across datacenters?
 * What are the operational responsibilities the infrastructure team carries that are impacted by Azure App Service PaaS?
 * What are the enterprise services the infrastructure/ops team owns that we are relying on (is there an implicit or explicit service/operating level agreement we are correctly/incorrectly engaging)?
@@ -126,7 +126,7 @@ The following topics identify opportunities that might inform improved DevOps pr
 * Do we have preferences for future operational support about who is responsible for technical service monitoring and first response for cloud hosted applications?
 
 ### Security Related Opportunities
-The following topics identify opportunities that might inform improved DevOps practices realted to the Security domain concerns:
+The following topics identify opportunities that might inform improved DevSecOps practices realted to the Security domain concerns:
 * Assessing MS Azure FedRamp docs and understanding which controls the application developer/product team are responsible for (i.e., that we own and MS does not).  This will be a large effort that should be broken up into sprints.
     - Create backlog stories corresponding to specific sets of controls or to control families
     - Stories are about work-products that meet three specific requirements:
@@ -143,4 +143,3 @@ The following topics identify opportunities that might inform improved DevOps pr
 # Document History
 | Author | Date | Comments |
 |-------|:--------|:--------|
-| S Taylor | 2017.07.14 | Completed initial draft for Trello #156|
