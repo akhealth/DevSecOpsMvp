@@ -35,12 +35,13 @@ I reset the "Deployment branch" under "Deployment options" in the portal to use 
 
 ### Hybrid/SQL Connection Strings
 
-SQL Auth is supported, and is what we use. For now, I manually added a new SQL Server user using SSMS.
+SQL Auth is what we use for now. I manually added a new SQL Server user using SSMS.
+In the future we will investigate other authentication options.
 
 You can test your connection string locally on the "remote" SQL Server in powershell.
 
 ```ps1
-$connstr = "Server=SQLServer,1433;Database=AKTestDataBase;User ID=sa;Password=<changeme>"
+$connstr = "Server=SQLServer,1433;Database=AKTestDataBase;User ID=<changeme>;Password=<changeme>"
 $sqlconn = New-Object System.Data.SqlClient.SqlConnection($connstr) 
 $sqlconn.Open();
 $sqlconn.Close();
@@ -85,13 +86,10 @@ Machine w/ HCM must whitelist **all of**:
 
 Note: various Hybrid docs mention that HCM must have "outbound access to Azure over ports 80 and 443" -- this is the same requirement we are dealing with here.
 
-### Webseal / auth
-
-Webseal must whitelist **one of**:
-
-1. Whitelist Azure AppService DNS entry for apps
-2. Obtain "static IP" for AppService and whitelist that
-
 ### Notes
 
 - "New" Hybrid connections always and only communicate over 443. There is no port customization, and even though "80" is mentioned it is never used.
+
+### Security Review
+
+18F performed a security review of the Azure Hybrid Connection, the results are here in [Azure_Hybrid_Connection_Security_Review.pdf](./Azure_Hybrid_Connection_Security_Review.pdf)
