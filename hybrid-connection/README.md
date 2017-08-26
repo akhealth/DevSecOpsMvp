@@ -10,16 +10,17 @@ The `az` client does not yet support setting up hybrid connections.  ARM or Terr
 For now we just enable the Hybrid Connection from the Azure portal.  `App Service -> Networking -> Hybrid Connections`
 
 ```
-Endpoint Name: SQLServerHybridConn (This is the name of the new HC resource)
-Endpoint Host: SQLServer (This is the host where our external resource lives*)
+Hybrid Connection Name: prototype-HybridConnection (This is the name of the new HC resource)
+Endpoint Host: HSS18FPOC-Test (This is the host where our external resource lives*)
 Endpoint Port: 1433
 
 Servicebus namespace: Create new
 Location: Us West 2
-Name: SQLServerServiceBus
+Name: prototype-ServiceBus 
 ```
 
 **\*Note**: The "Endpoint Host" is confusing. It is the hostname as seen from the machine where the HCM is installed. We'll install the HCM on our SQL Server VM.  "localhost" is reserved, so get the correct hostname on the VM with Powershell: `hostname`.
+
 
 ### Install Hybrid Connection Manager
 
@@ -31,7 +32,7 @@ Launch the "Hybrid Connection Manager UI" program and "Configure new Hybrid Conn
 ### Deployment for testing
 
 I'm deploying to a short-lived AzureApps resource. I created it and deploy to it as described in `/appservice` folder.
-I reset the "Deployment branch" under "Deployment options" in the portal to use my feature branch (this will come in handy for staging environment):  `git push azure <feature>`
+Under "Application Settings" I added a new "App Setting" `deployment_branch` and set it to my feature branch `hcm-prototype-updates` so I could deploy from a branch other than master.
 
 ### Hybrid/SQL Connection Strings
 
@@ -49,6 +50,10 @@ $sqlconn.Close();
 **\*Note**: the `User ID` and `Password` just above are SQL Server Auth credentials that you'll have to set up.
 
 **Further, the connection string is _identical_ for local/VM and Hybrid/PaaS connections.** This is the magic of Hybrid Connections.
+
+### Hybrid/WebService Connection
+
+Hybrid connection can give us access to on-prem web services from Azure.  The web service must be accessible from the server running the Hybrid Connection Manager.  To access a service, use the internal domain name for the Endpoint Host, set port 443 for https. 
 
 ### Hybrid Connection underlying technology
 
@@ -78,13 +83,20 @@ Ref:
 
 Machine w/ HCM must whitelist **all of**:
 
-1. "Service Bus endpoint URL" : find this value in the HCM details screen labeled as "Service Bus Endpoint" (`sqlserverservicebus.servicebus.windows.net` for our demo)
+1. "Service Bus endpoint URL" : find this value in the HCM details screen labeled as "Service Bus Endpoint" (`prototype-servicebus.servicebus.windows.net` for our demo)
 
 2. "Service Bus Gateways" : these are 128 different servers.  See discussion at "things you should know" link above.  128 different whitelists will have to be added for `G0-prod-[stamp]-010-sb.servicebus.windows.net` -> `G127-prod-[stamp]-010-sb.servicebus.windows.net`. (Hopefully we can use wildcards!?). `[stamp]` can be found with `nslookup`, again see doc above.
 
 3. "Azure IP Address" : find this value in the HCM details screen labeled "Azure IP Address"
 
-Note: various Hybrid docs mention that HCM must have "outbound access to Azure over ports 80 and 443" -- this is the same requirement we are dealing with here.
+Note: various Hybrid docs mention that HCM must have "outbound access to Azure over ports 80 and 443", but we have verified that only 443 is used and need be opened.
+
+
+A good way to test outbound access in Windows: `Test-NetConnection -ComputerName prototype-servicebus.servicebus.windows.net -Port 443`
+
+### HCM Logging
+
+To debug the HCM connection use the Windows Event Viewer.  Logs are under `Applicaiton and Service Logs / Microsoft / ServiceBus / Client`.
 
 ### Notes
 
