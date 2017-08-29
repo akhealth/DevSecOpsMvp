@@ -46,4 +46,4 @@ We use two scripts here `start-azure-app.ps1`, `stop-azure-app.ps1` that start a
 
 Azure Apps uses [Kudu](https://github.com/projectkudu/kudu) to handle deployments. See `appservice/README.md` to set up a local git repository to push/deploy to an AppService app.  
 
-Kudu has a very useful dashboard that lives behind Azure authentication.  To view the dashboard add `.scm` to your AppService url.  i.e. change `http://devopsmvp-staging.azurewebsites.net` to `http://devopsmvp-staging.scm.azurewebsites.net`.
+Kudu has a very useful dashboard that lives behind Azure authentication.  To view the dashboard add `.scm` to your AppService url.  i.e. change `http://devsecopsmvp-staging.azurewebsites.net` to `http://devsecopsmvp-staging.scm.azurewebsites.net`.

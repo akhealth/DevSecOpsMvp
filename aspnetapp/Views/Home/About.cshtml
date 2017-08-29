@@ -3,7 +3,11 @@
 }
 <h2>@ViewData["Title"].</h2>
 
-<h3>This page is manually hooked up to a SQL Server resource</h3>
+<h3>This is a connection to an AK on-prem SQL Server</h3>
+<p><pre>@ViewData["SQL"]</pre></p>
 
+<h3>This is a connection to an AK on-prem SOAP endpoint</h3>
+<p><pre>@ViewData["SOAP"]</pre></p>
 
-<p><pre>@ViewData["Message"]</pre></p>
+<h3>This is a connection to a Postgres server</h3>
+<p><pre>@ViewData["PG"]</pre></p>

@@ -24,7 +24,7 @@ Microsoft further describes a patching protocol in their FedRAMP Moderate SSP in
 - 90 days for moderate vulnerabilities
 - 180 days for low vulnerabilities
 
-Microsoft does not, obviously, patch the custom code of the application.  Microsoft includes integration points for static code scanning of the application code itself in their Visual Studio Team Services build/continuous-integration feature.  They also offer integration within the App Service for cost-add scanning with Tinfoil, as noted above.  It is up to the application  DevOps team to leverage these capabilities for identifying and correcting vulnerabilities in the application code itself.
+Microsoft does not, obviously, patch the custom code of the application.  Microsoft includes integration points for static code scanning of the application code itself in their Visual Studio Team Services build/continuous-integration feature.  They also offer integration within the App Service for cost-add scanning with Tinfoil, as noted above.  It is up to the application  DevSecOps team to leverage these capabilities for identifying and correcting vulnerabilities in the application code itself.
 
 ## App Service Administration
 
@@ -34,4 +34,4 @@ It is important to note that authentication and authorization for access to the 
 
 ### A Note About Application Authentication and Authorization
 
-In our prototyping efforts and this DevOps MVP, we are assuming that authentication is architecturally separated from the application to support single-sign-on with legacy on-premise applications.  The App Service hosted application is then configured to receive the authenticated user-identity token with the request and to apply authorization rules native to the application to that user-identity for validating whether the user-identity has access to a specific application resource/feature.
+In our prototyping efforts and this DevSecOps MVP, we are assuming that authentication is architecturally separated from the application to support single-sign-on with legacy on-premise applications.  The App Service hosted application is then configured to receive the authenticated user-identity token with the request and to apply authorization rules native to the application to that user-identity for validating whether the user-identity has access to a specific application resource/feature.

@@ -1,10 +1,10 @@
 location="westus2"
-group_name="staging-app-service"
-service_name="DevOpsMVP-staging"
+group_name="prototype-AppService"
+service_name="prototype-DevSecOpsMVP"
 num_workers="1"
 
 # The pricing tiers, e.g., F1(Free), D1(Shared), B1(Basic Small), B2(Basic Medium), B3(Basic Large), S1(Standard Small),
-plan_name="DevOpsMVP-standard"
+plan_name="prototype-Standard"
 tier="S1"  # Standard tier is required for HybirdConnections.
 
 # Create AppService
@@ -12,14 +12,14 @@ az group create --name $group_name --location $location
 az appservice plan create --name $plan_name --resource-group $group_name --location $location --number-of-workers $num_workers --sku $tier
 az webapp create --name $service_name --plan $plan_name --resource-group $group_name
 
-# Deployment via git
-# TODO: There may be a bug in Azure here.  If the remote service does not authenticate your `deploy_user` and `deploy_pass`, then you might have to add these "Deployment Credentials" manually in the Azure portal.
+# Deployment via git:
 # Create a deployment user, set up deployment from a local git repo, and get the url that we should push to.
+# TODO: There may be a bug in Azure here. If this doesn't work set "Deployment Credentials" manually in the Azure portal.
 az webapp deployment user set --user-name $DEPLOY_USER --password $DEPLOY_PASS
 url=$(az webapp deployment source config-local-git --name $service_name --resource-group $group_name --query url --output tsv)
 
-# $url will look like: https://AKAzureAdmin@devopsmvp-staging.scm.azurewebsites.net/DevOpsMVP-staging.git
-# AzureApps uses Kudu for deployment.  See this url for a cool dashboard: https://devopsmvp-staging.scm.azurewebsites.net/
+# IMPORTANT: Make sure Username in this is correct. $url will look like:  https://PrototypeAlaska@prototype-devsecopsmvp.scm.azurewebsites.net/prototype-DevSecOpsMVP.git
+# AzureApps uses Kudu for deployment.  See this url for a cool dashboard: https://prototype-devsecopsmvp.scm.azurewebsites.net/
 
 # Configure local git
 git remote add azure $url
