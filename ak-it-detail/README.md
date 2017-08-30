@@ -2,7 +2,7 @@
 
 Alaska Department of Health and Social Services (DHSS) has detailed a number of IT staff resources to the EIS-R product team and sprint planning activities.  Additionally, IT has identified staff who typically do not participate in sprint planning, but are likely detailees to the EIS-R efforts due to their knowledge, skills and abilities, and their other organizational assignments.  The [Detailed staff](#Detailed-staff) table below identifies these staff.  The [IT Service Line Matrix](#IT-Service-Line-Matrix) shows a service delivery view of how these staff might support the EIS-R project.
 
-EIS-R project staff should be aware that the State of Alaska is centralizing department IT staff.  These changes will move staff out of the DHSS chain of command, but detail "line of business" staff to DHSS via reimbursable services agreements (RSAs) to maintain support.  More information on this re-organization are below under [Office of Information Technology (OIT)](#Office-of-Information-Technology) organization within Department of Administration and under the State Chief Information Officer.
+EIS-R project staff should be aware that the State of Alaska is centralizing department IT staff.  These changes will move staff out of the DHSS chain of command, but detail "line of business" staff to DHSS via reimbursable services agreements (RSAs) to maintain support.  More information on this re-organization is located below under [Office of Information Technology (OIT)](#Office-of-Information-Technology).
 
 ## Detailed staff
 
@@ -41,12 +41,12 @@ Wide Area Network, Telecomm, and Perimeter Security | Y | Y | Y | N | P Wilkins,
 
 ## Office of Information Technology
 
-Under [Alaska Administrative Order 284](http://doa.alaska.gov/oit/docs/AO-284-Establishing-Office-of-Information-Technology.pdf), the Walker Administration has consolidated all Alaska IT personnel into a centralized organization, The Office of Information Technology (OIT).  The primary goal of centralizing IT staff is cost savings.  The thesis behind the reorganization is:
+Under [Alaska Administrative Order 284](http://doa.alaska.gov/oit/docs/AO-284-Establishing-Office-of-Information-Technology.pdf), the Walker Administration has consolidated all Alaska IT personnel into a centralized organization, The Office of Information Technology (OIT), under a newly designated State of Alaska Chief Information Officer.  The primary goal of centralizing IT staff is cost savings.  The thesis behind the reorganization is:
 
 >The fundamental [cost] issue is a lack of organizational and governance structures that have created silos leading to divergent and occasionally conflicting operational goals...
 
+The intent, then, is to bring the organization under a "strong CIO", who will reorganize IT service delivery, reducing or eliminating duplication of services and process divergence that does not affect the business outcomes of the service delivery.
 
-With AO 204 signed in April of 2017, the OIT is proceeding with plans to identify "line of business" and "commodities" services and staff.  Staff identified to support commodities services will be moved into the appropriate area of the OIT organization in January of 2018.
+With AO 204 signed in April of 2017, the OIT is proceeding with plans to identify "line of business" and "commodities" services and staff.  DHSS staff identified to support commodities services will be moved into the appropriate area of the OIT organization starting in January of 2018.
 
-At this writing, DHSS continues to operate largely as-is prior to consolidation.  However, significant changes are expected within the next three to six months.  In the face of limited transition plan information, DHSS leadership and the Department Technology Officer assigned by OIT to DHSS intend to maintain service delivery through the transition.
-
+At this writing, DHSS continues to operate largely as-is prior to the AO 284 consolidation.  However, significant changes are expected within the next three to six months.  In the face of limited transition plan information, DHSS leadership and the Department Technology Officer assigned by OIT to DHSS intend to prioritize maintaining service delivery through the transition.
