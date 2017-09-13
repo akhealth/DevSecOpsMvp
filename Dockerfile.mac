@@ -1,5 +1,0 @@
-FROM microsoft/dotnet:latest
-WORKDIR /aspnetapp
-COPY aspnetapp . 
-RUN dotnet restore
-CMD dotnet run
