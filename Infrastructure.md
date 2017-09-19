@@ -40,6 +40,7 @@ cf login -a api.fr.cloud.gov --sso
 cf target -o sandbox-gsa -s clinton.troxel
 
 # Deploy
+dotnet new mvc --name aspnetapp
 cd  aspnetapp
 cf push aspnet-clint
 
@@ -48,6 +49,3 @@ cf apps
 cf logs aspnet-clint --recent
 open https://aspnet-clint.app.cloud.gov
 ```
-
-Note: with this simple setup, we need to comment out `//.UseUrls("http://*:5000/")` in `aspnetapp/Program.cs` in order for this app to run under cloud.gov.  This setting was added to support Docker.
-

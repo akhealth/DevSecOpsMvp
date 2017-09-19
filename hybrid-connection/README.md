@@ -55,7 +55,20 @@ $sqlconn.Close();
 
 Hybrid connection can give us access to on-prem web services from Azure.  The web service must be accessible from the server running the Hybrid Connection Manager.  To access a service, use the internal domain name for the Endpoint Host, set port 443 for https. 
 
-### Hybrid Connection underlying technology
+
+## SQL Authentication over Hybrid Connection
+
+Unfortunately, **only SQL Server Auth is supported over the Hybrid Connection**.  This means we cannot use Active Directory style authentication to an on-prem SQL Server over the Hybrid Connection. This has been verified with Azure and SQL Server support.
+
+## Things you cannot do with Hybrid Connections
+
+- mounting a drive
+- using UDP
+- TCP over dynamic ports
+- LDAP (b/c it sometimes requires UDP)
+- Active Directory Support
+
+## Hybrid Connection underlying technology
 
 Please see the following pages for further documentation from Microsoft.
 
@@ -78,9 +91,6 @@ Ref:
 - https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-protocol
 - https://blogs.msdn.microsoft.com/waws/2017/06/30/things-you-should-know-web-apps-and-hybrid-connections/#WhiteList
 
-
-### Hybrid
-
 Machine w/ HCM must whitelist **all of**:
 
 1. "Service Bus endpoint URL" : find this value in the HCM details screen labeled as "Service Bus Endpoint" (`prototype-servicebus.servicebus.windows.net` for our demo)
@@ -94,14 +104,10 @@ Note: various Hybrid docs mention that HCM must have "outbound access to Azure o
 
 A good way to test outbound access in Windows: `Test-NetConnection -ComputerName prototype-servicebus.servicebus.windows.net -Port 443`
 
-### HCM Logging
+## HCM Logging
 
 To debug the HCM connection use the Windows Event Viewer.  Logs are under `Applicaiton and Service Logs / Microsoft / ServiceBus / Client`.
 
-### Notes
-
-- "New" Hybrid connections always and only communicate over 443. There is no port customization, and even though "80" is mentioned it is never used.
-
-### Security Review
+## Security Review
 
 18F performed a security review of the Azure Hybrid Connection, the results are here in [Azure_Hybrid_Connection_Security_Review.pdf](./Azure_Hybrid_Connection_Security_Review.pdf)

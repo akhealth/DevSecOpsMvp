@@ -27,7 +27,7 @@ The `/sqlserver` folder contains code and docs for MS SQL Server.
 The `/hybrid-connection` folder contains docs for the Hybrid Connection
 
 ## Example App
-See `/aspnetapp` folder for the example app that we build, test, and deploy.
+See [https://github.com/AlaskaDHSS/ProtoWebApi](https://github.com/AlaskaDHSS/ProtoWebApi) for our prototype  
 
 ## CI, CD
 See `/vsts` folder for documentation around the VSTS Build and Release pipelines.
