@@ -4,6 +4,31 @@ Azure App Service is Azure's PaaS.  You bring the application and they do everyt
 
 See App Service [Architecture](/appservice/Architecture.md) and [Security](/appservice/Security.md) for information about those topics.
 
+## Deployment
+
+Deployment Slots are like extra environments in the Azure PaaS. We might name ours `staging`, `development` or `pre-prod`.  Deployment slots each get their own url.
+
+You can associate each slot with a git branch by adding an App Setting called `deployment_branch`. Be sure to mark any slot-specific settings like this as a "Slot Setting". This way we can deploy the `staging` branch to the `staging` slot.
+
+When you create a Deployment Slot, the "Copy Configuration from" option lets you copy App Settings into the new environment.
+
+You must also add your existing Hybrid Connection(s) to each new Deployment Slot created.  
+
+### One-off deployment
+
+To set this up select Deployment Options and Local Git.
+Get the git remote url 
+```
+az webapp deployment source config-local-git --name ProtoWebAPI --resource-group Prototype --slot development --query url --output tsv
+```
+Add the url it returns as a remote
+```
+git remote add azure-development <url>
+```
+See `create-app-service.bash` for an automated way to do this.
+
+Now, `git push azure-development development` to deploy to the development slot.
+
 ## Automation
 
 ### TF/ARM
