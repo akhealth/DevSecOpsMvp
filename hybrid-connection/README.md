@@ -111,3 +111,16 @@ To debug the HCM connection use the Windows Event Viewer.  Logs are under `Appli
 ## Security Review
 
 18F performed a security review of the Azure Hybrid Connection, the results are here in [Azure_Hybrid_Connection_Security_Review.pdf](./Azure_Hybrid_Connection_Security_Review.pdf)
+
+
+## TODO: overcome lost hybrid connections issue
+
+We have noticed the Hybrid Connection Manager lose connections. The problem seemed to originate with a failed DNS lookups. Why the HCM service didn’t automatically recover after the DNS was restored is a mystery.  There isn't an "automatically reconnect" option in the HCM.
+
+The log error is `Name resolution for the name protowebapi.servicebus.windows.net timed out after none of the configured DNS servers responded`
+
+Find HCM logs through Windows Event Logs.  Under Windows events, there is a separate application-level log for the service bus.  The error above is acutally in the "Windows Logs -> System" namespace.
+
+**The Manual Fix** for now is to just restart the HCM service.  Use "Services" app and restart "Azure Hybrid Connection Manager Service".
+
+Some people have worked around this with a keepalive script: https://stackoverflow.com/questions/40516417/successfully-established-hybrid-connection-loses-connection-after-20-minutes-re
