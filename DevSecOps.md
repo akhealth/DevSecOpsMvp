@@ -61,7 +61,7 @@ Environments will be build using code, configuration scripts and automation tool
 ## Rapid onboarding
 Onboarding will be supported via a combination of application and/or OS image virtualization using technologies like Docker.  New contributors should be able to onboard with a standard development toolset without having to install tools, etc.  Development, integration, test and production environmental differences should be minimized.
 
-## Conistent and Prescribed Development and Continuous Integration
+## Consistent and Prescribed Development and Continuous Integration
 Development and integration processes will be built on top of Visual Studio Team Services and Git.  These processes will leverage pull requests and continuous integration triggers to ensure that all code merged into the mainline is immediately built and passed or rejected.
 
 ## Measured, Minimum Standard Code Quality
