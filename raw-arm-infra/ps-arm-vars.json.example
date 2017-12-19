@@ -1,0 +1,19 @@
+{
+    "DeploymentInfo":  {
+                           "TemplateFile":  "create-vm.json",
+                           "Name":  "<updateme>",
+                           "TemplateParameterFile":  "parameters.json"
+                       },
+    "ResourceGroupInfo":  {
+                              "Name":  "<updateme>",
+                              "Location":  "<updateme>"
+                          },
+    "SubscriptionInfo":  {
+                             "Name":  "<updateme>"
+                         },
+    "LoginInfo":  {
+                      "TenantId":  "<updateme>",
+                      "ApplicationId":  "<updateme>",
+                      "Password":  "<updateme>"
+                  }
+}

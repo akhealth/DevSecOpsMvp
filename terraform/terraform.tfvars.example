@@ -1,0 +1,5 @@
+subscription_id = "CHANGEME"
+client_id = "CHANGEME"
+client_secret = "CHANGEME"
+tenant_id = "CHANGEME"
+admin_password = "CHANGEME"

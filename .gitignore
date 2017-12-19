@@ -1,0 +1,8 @@
+.DS_Store
+parameters.json
+raw-arm-infra/ps-arm-vars.json
+.env.bash
+env.ps1
+*tfstate*
+terraform.tfvars
+.vscode
