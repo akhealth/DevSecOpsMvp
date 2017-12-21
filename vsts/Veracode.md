@@ -28,3 +28,31 @@ VSTS Veracode plugin configuration
 ## Troubleshooting
 ### No files found
 If VSTS build reports the build artifacts were not found, ensure there is a publish step that moves the build artifacts to the Build.ArtifactStagingDirectory
+
+### Veracode upload and scan task timeout
+VSTS build tasks timeout by default after 60 minutes of waiting for the scan to complete.  There are three scenarios we have seen with these timeouts:
+
+1. Scan actually took longer than 60 minutes
+2. Scan got stuck and needs action on the Veracode portal
+3. Something else went wrong and file upload failed in-progress
+
+We diagnose and resolve all scenarios in the Veracode portal.
+
+#### Scan took longer than 60 minutes
+Sandbox scans are appropriately used for scanning of pre-production (dev, test) code, but Veracode gives sandboxes lower priority in resource scans.  This appears to mean that sometimes a sandbox scan will pause inexplicably.  This is rare, but it does happen.  When this occurs you can see in the Veracode portal that the scan is in progress and there are no errors or prompts, or you see that the scan completed.  _Note that in this case, the scan does (eventually) finish without intervention and subsequent builds will be able to scan, i.e., no additional intervention is required to avoid breaking the build.
+
+#### Scan got stuck
+Sometimes we have seen scans get stuck when they use the "Previous Selection" for the modules file selection.  This selection is found in the sandbox:
+
+1. Click _{ScanID}_
+2. Click _Review Modules_
+3. Click _Simple Mode_ tab
+4. Within the _Uploaded Modules_ _Scan Details_ section review the _File Selection_
+
+When this scenario occurs, _File Selection_ will be "Previous Selection".  Change the value in _File Selection_ to "Veracode Default", then click the _Start Scan_ button (will become enabled after _File Selection_ change).  This will start the scan and it typically completes within a reasonably short time frame.
+
+#### Something else went wrong
+Once or twice we have seen a scan get stuck where the file upload failed in progress.  In this case, the only option is to delete the scan and re-queue the build in VSTS.
+
+#### Final notes about scan timeouts
+Note that whenever a scan is stuck, Veracode will not allow further scans within that sandbox.  The problem must be resolved in the Veracode portal before VSTS builds queued that target that Veracode sandbox will succeed.  Until then the stuck scan results in breaking the build.

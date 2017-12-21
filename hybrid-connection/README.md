@@ -11,8 +11,8 @@ For now we just enable the Hybrid Connection from the Azure portal.  `App Servic
 
 ```
 Hybrid Connection Name: prototype-HybridConnection (This is the name of the new HC resource)
-Endpoint Host: HSS18FPOC-Test (This is the host where our external resource lives*)
-Endpoint Port: 1433
+Endpoint Host: Obtain from AK
+Endpoint Port: Obtain from AK
 
 Servicebus namespace: Create new
 Location: Us West 2
