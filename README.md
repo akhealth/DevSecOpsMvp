@@ -1,5 +1,7 @@
 # DevSecOps MVP
 
+**This repository contains some early experiments with DevOps tools and practices used by the AK DHSS. Current tools, standards and practices are now maintained in a private VSTS Git repo and is shared with vendors engaged on projects. `This repo is no longer actively maintained`.**
+
 This repository represents our work in DevSecOps practices and tools, Continous Integration and Delivery for the [Alaska DHSS modernization project](https://github.com/18F/acq-alaska-dhss-modernization).
 We performed a breadth-first survey of these things. Most topics exist as folders here and contain `README.md`s and various flavors of scripts.
 
