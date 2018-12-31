@@ -11,6 +11,10 @@ Our staging environment exists as an Azure AppService [Deployment Slot](http://b
 
 When someone begins new work, they cut a new branch from `staging` and name it after their work, perhaps `feature1`.  New changes are pushed to the feature branch origin (VSTS) often. CI is configured to build all branches, new commits to `feature1` will trigger CI (not CD).
 
+## Code review
+
+Code review is required before merging in new work. See [EIS-Modernization/code-review.md](https://github.com/AlaskaDHSS/EIS-Modernization/blob/master/code-review.md).
+
 ## Merging to `staging`
 
 When new work is complete, we set up a Pull Request (PR) from `feature1` to `staging`. Discussion about, and approval of changes happens in the PR interface in VSTS.
